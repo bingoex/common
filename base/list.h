@@ -190,6 +190,105 @@ static inline void list_splice_init(struct list_head *list,
 __END_DECLS
 
 
+class CListHead
+{
+	public:
+		struct list_head objlist;
+
+		void InitList() {
+			INIT_LIST_HEAD(&objlist);
+		}
+
+		void ResetList() {
+			list_del_init(&objlist);
+		}
+
+		int ListEmpty() const {
+			return list_empty(&objlist);
+		}
+
+		CListHead *ListNext(){
+			return list_entry(objlist.next, CListHead, objlist);
+		}
+
+		CListHead *ListPrev(){
+			return list_entry(objlist.prev, CListHead, objlist);
+		}
+
+		void ListAdd(CListHead &n) {
+			list_add(&objlist, &n.objlist);
+		}
+
+		void ListAdd(CListHead *n) {
+			list_add(&objlist, &n->objlist);
+		}
+
+		void ListAddTail(CListHead &n) {
+			list_add_tail(&objlist, &n.objlist);
+		}
+
+		void ListAddTail(CListHead *n) {
+			list_add_tail(&objlist, &n->objlist);
+		}
+
+		void ListDel() {
+			ResetList();
+		}
+
+		void ListMove(CListHead &n) {
+			list_move(&objlist, &n.objlist);
+		}
+
+		void ListMove(CListHead *n) {
+			list_move(&objlist, &n->objlist);
+		}
+
+		void ListMoveTail(CListHead &n) {
+			list_move_tail(&objlist, &n.objlist);
+		}
+
+		void ListMoveTail(CListHead *n) {
+			list_move_tail(&objlist, &n->objlist);
+		}
+
+		void FreeList() {
+			while (!ListEmpty())
+				ListNext()->ResetList();
+		}
+};
+
+template<class T>
+class CListObject: public CListHead
+{
+	public:
+		CListObject() {
+			InitList();
+		}
+
+		~CListObject() {
+			ResetList();
+		}
+
+		CListObject<T> *ListNext() {
+			return (CListObject<T> *)CListHead::ListNext();
+		}
+
+		CListObject<T> *ListPrev() {
+			return (CListObject<T> *)CListHead::ListPrev();
+		}
+
+		T *ListOwner() {
+			return (T *)this;
+		}
+
+		T *NextOwner(){
+			return ListNext()->ListOwner();
+		}
+
+		T *PrevOwner(){
+			return ListPrev()->ListOwner();
+		}
+};
 
 
 	}
