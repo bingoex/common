@@ -22,6 +22,7 @@ LIB += -lpthread -ldl
 TARGET=libcommon.a
 OBJ = $(COMM)/test.o \
 	  $(BASE)/misc.o \
+	  $(BASE)/notify.o \
 	  
 
 all : $(TARGET)
