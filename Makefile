@@ -1,6 +1,6 @@
 
 COMM = ../common
-BASE = ./base
+BASE = ../common/base
 
 CUR_DIR=$(shell pwd)
 
@@ -21,6 +21,7 @@ LIB += -lpthread -ldl
 
 TARGET=libcommon.a
 OBJ = $(COMM)/test.o \
+	  $(BASE)/misc.o \
 	  
 
 all : $(TARGET)
