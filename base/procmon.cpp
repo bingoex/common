@@ -1,0 +1,6 @@
+#include "procmon.h"
+
+int main() 
+{
+	return 0;
+}
