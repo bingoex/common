@@ -1,0 +1,401 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADJUST_PROC_CYCLE	base/procmon.cpp	72;"	d	file:
+ADJUST_PROC_DELAY	base/procmon.cpp	71;"	d	file:
+ALL_BINARY	comm/example/Makefile	/^ALL_BINARY = test_cm_cfg test_cm_log test_cm_shm test_cm_debug \\$/;"	m
+ARGS	comm/example/Makefile	/^ARGS = -g -Wall -fno-strict-aliasing #-Qunused-arguments$/;"	m
+ARGS	comm/src/Makefile	/^ARGS = -g -Wall -fno-strict-aliasing$/;"	m
+AddBuffer	comm/src/cm_binary.c	/^int AddBuffer(char **p, int *piLen, const char *pBuf, CM_INT32 iBufLen)$/;"	f
+AddBufferNoLen	comm/src/cm_binary.c	/^int AddBufferNoLen(char **p, int *piLen, const char *pBuf, CM_INT32 iBufLen)$/;"	f
+AddChar	comm/src/cm_binary.c	/^int AddChar(char **p, int *piLen, char cValue)$/;"	f
+AddDWord	comm/src/cm_binary.c	/^int AddDWord(char **p, int *piLen, unsigned CM_INT32 lValue)$/;"	f
+AddQWord	comm/src/cm_binary.c	/^int AddQWord(char **p, int *piLen, uint64_t qwValue)$/;"	f
+AddWord	comm/src/cm_binary.c	/^int AddWord(char **p, int *piLen, unsigned short shValue)$/;"	f
+BASE	Makefile	/^BASE = ..\/common\/base$/;"	m
+BUCKET_SIZE	base/procmon.h	11;"	d
+BUF_LEN	comm/example/test_cm_binary.c	7;"	d	file:
+CB_CONNECTED	base/commu.h	/^				CB_CONNECTED = 0,$/;"	e	enum:common::base::commu::__anon1
+CB_DISCONNECT	base/commu.h	/^				CB_DISCONNECT,$/;"	e	enum:common::base::commu::__anon1
+CB_HANGUP	base/commu.h	/^				CB_HANGUP,$/;"	e	enum:common::base::commu::__anon1
+CB_OVERLOAD	base/commu.h	/^				CB_OVERLOAD,$/;"	e	enum:common::base::commu::__anon1
+CB_RECVDATA	base/commu.h	/^				CB_RECVDATA,$/;"	e	enum:common::base::commu::__anon1
+CB_RECVERROR	base/commu.h	/^				CB_RECVERROR,$/;"	e	enum:common::base::commu::__anon1
+CB_RECVNONE	base/commu.h	/^				CB_RECVNONE,$/;"	e	enum:common::base::commu::__anon1
+CB_SENDDATA	base/commu.h	/^				CB_SENDDATA,$/;"	e	enum:common::base::commu::__anon1
+CB_SENDDONE	base/commu.h	/^				CB_SENDDONE,$/;"	e	enum:common::base::commu::__anon1
+CB_SENDERROR	base/commu.h	/^				CB_SENDERROR,$/;"	e	enum:common::base::commu::__anon1
+CB_TIMEOUT	base/commu.h	/^				CB_TIMEOUT,$/;"	e	enum:common::base::commu::__anon1
+CC	comm/example/Makefile	/^CC = g++$/;"	m
+CC	comm/src/Makefile	/^CC = g++$/;"	m
+CCommu	base/procmon.h	/^					CCommu() {}$/;"	f	class:common::base::procmon::CCommu
+CCommu	base/procmon.h	/^			class CCommu$/;"	c	namespace:common::base::procmon
+CFG_DOUBLE	comm/src/cm_cfg.h	13;"	d
+CFG_INT	comm/src/cm_cfg.h	11;"	d
+CFG_LONG	comm/src/cm_cfg.h	12;"	d
+CFG_STRING	comm/src/cm_cfg.h	10;"	d
+CLI_RECV_INFO	base/procmon.h	231;"	d
+CLI_SEND_INFO	base/procmon.h	230;"	d
+CListHead	base/list.h	/^class CListHead$/;"	c	namespace:common::base
+CListObject	base/list.h	/^		CListObject() {$/;"	f	class:common::base::CListObject
+CListObject	base/list.h	/^class CListObject: public CListHead$/;"	c	namespace:common::base
+CMQCommu	base/procmon.cpp	/^CMQCommu::CMQCommu():mqid_(0)$/;"	f	class:CMQCommu
+CMQCommu	base/procmon.cpp	/^CMQCommu::CMQCommu(int mqkey):mqid_(0)$/;"	f	class:CMQCommu
+CMQCommu	base/procmon.h	/^			class CMQCommu: public CCommu$/;"	c	namespace:common::base::procmon
+CM_INT32	comm/src/cm_type.h	11;"	d
+CM_INT32	comm/src/cm_type.h	7;"	d
+CMisc	base/misc.h	/^		class CMisc {$/;"	c	namespace:common::base
+CNotify	base/notify.h	/^			class CNotify $/;"	c	namespace:common::base::notify
+COMM	Makefile	/^COMM = ..\/common$/;"	m
+COMM_DIR	comm/example/Makefile	/^COMM_DIR = ..\/src$/;"	m
+COMM_LIB	comm/example/Makefile	/^COMM_LIB = $(COMM_DIR)\/cm_lib.a -I$(COMM_DIR) $/;"	m
+CPPSRC	comm/example/Makefile	/^CPPSRC=$(shell ls *.cpp)$/;"	m
+CPPSRC	comm/src/Makefile	/^CPPSRC=$(shell ls *.cpp)$/;"	m
+CProcMonCli	base/procmon.h	/^			class CProcMonCli$/;"	c	namespace:common::base::procmon
+CProcMonSrv	base/procmon.cpp	/^CProcMonSrv::CProcMonSrv(): commu_(NULL)$/;"	f	class:CProcMonSrv
+CProcMonSrv	base/procmon.h	/^			class CProcMonSrv$/;"	c	namespace:common::base::procmon
+CSRC	comm/example/Makefile	/^CSRC=$(shell ls *.c)$/;"	m
+CSRC	comm/src/Makefile	/^CSRC=$(shell ls *.c)$/;"	m
+CTCommu	base/commu.h	/^					CTCommu() {$/;"	f	class:common::base::commu::CTCommu
+CTCommu	base/commu.h	/^			class CTCommu $/;"	c	namespace:common::base::commu
+CT_CLOSE	base/commu.h	/^				CT_CLOSE,$/;"	e	enum:common::base::commu::__anon2
+CT_DISCONNECT	base/commu.h	/^				CT_DISCONNECT = 0,$/;"	e	enum:common::base::commu::__anon2
+CT_STAT	base/commu.h	/^				CT_STAT,$/;"	e	enum:common::base::commu::__anon2
+CUR_DIR	Makefile	/^CUR_DIR=$(shell pwd)$/;"	m
+C_COMM	Makefile	/^C_COMM = ..\/common\/comm\/src$/;"	m
+C_COMM_LIB	Makefile	/^C_COMM_LIB = $(C_COMM)\/cm_lib.a -I$(C_COMM) $/;"	m
+Comm_GetConfig	comm/src/cm_cfg.c	/^int Comm_GetConfig(char * sConfigFileFullPath, ...)$/;"	f
+CreateAddr	comm/src/cm_net.c	/^struct sockaddr_in * CreateAddr(const char *sIp, const char *sPort, const char *sSockType)$/;"	f
+CreateAddrEx	comm/src/cm_net.c	/^struct sockaddr_in * CreateAddrEx(const char *sIp, int iPort, const char *sSockType)$/;"	f
+CreateByProto	singleton.h	/^		template<class T> class CreateByProto$/;"	c	namespace:common::singleton
+CreateClientSocket	comm/src/cm_net.c	/^int CreateClientSocket(const char *sSockType, int *piSocket, const char *sServerIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateClientSocketRaw	comm/src/cm_net.c	/^int CreateClientSocketRaw(int iSockType, int *piSocket, uint32_t dwServerIp, int iPort, int iIsNeedBlock)$/;"	f
+CreateNew	singleton.h	/^		template<class T> class CreateNew$/;"	c	namespace:common::singleton
+CreateSocket	comm/src/cm_net.c	/^int CreateSocket(const char *sSockType, int *pListener, const char *sListenIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateSocketRaw	comm/src/cm_net.c	/^int CreateSocketRaw(int iSockType, int *pListener, uint32_t dwListenIp, int iPort, int iIsNeedBlock)$/;"	f
+CreateTcpClientSocket	comm/src/cm_net.c	/^int CreateTcpClientSocket(int *piSocket, const char *sServerIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateTcpClientSocketEx	comm/src/cm_net.c	/^int CreateTcpClientSocketEx(int *piSocket, const char *sServerIp, int iPort, int iIsNeedBlock)$/;"	f
+CreateTcpSocket	comm/src/cm_net.c	/^int CreateTcpSocket(int *pListener, const char *sListenIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateTcpSocketEx	comm/src/cm_net.c	/^int CreateTcpSocketEx(int *pListener, const char *sListenIp, int iPort, int iIsNeedBlock)$/;"	f
+CreateUdpClientSocket	comm/src/cm_net.c	/^int CreateUdpClientSocket(int *piSocket, const char *sServerIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateUdpClientSocketEx	comm/src/cm_net.c	/^int CreateUdpClientSocketEx(int *piSocket, const char *sServerIp, int iPort, int iIsNeedBlock)$/;"	f
+CreateUdpSocket	comm/src/cm_net.c	/^int CreateUdpSocket(int *pListener, const char *sListenIp, const char *sPort, int iIsNeedBlock)$/;"	f
+CreateUdpSocketEx	comm/src/cm_net.c	/^int CreateUdpSocketEx(int *pListener, const char *sListenIp, int iPort, int iIsNeedBlock)$/;"	f
+DEBUG	comm/example/Makefile	/^DEBUG=-g$/;"	m
+DEBUG	comm/src/Makefile	/^DEBUG= -g$/;"	m
+DEDAULT_MQ_KEY	base/procmon.h	23;"	d
+DEFAULT_CONF_FILE	comm/example/test_cm_cfg.c	6;"	d	file:
+DaemonInit	comm/src/cm_process.c	/^void DaemonInit()$/;"	f
+DateTimeToStr	comm/src/cm_time.c	/^char *DateTimeToStr(const time_t tTime)$/;"	f
+DelShm	comm/src/cm_shm.c	/^int DelShm(int iKey)$/;"	f
+Destroy	singleton.h	/^				static void Destroy() {$/;"	f	class:common::singleton::SingleTon
+Destroy	singleton.h	/^				static void Destroy(T *obj) {$/;"	f	class:common::singleton::CreateByProto
+Destroy	singleton.h	/^				static void Destroy(T *obj) {$/;"	f	class:common::singleton::CreateNew
+DumpHex	comm/src/cm_debug.c	/^const char * DumpHex(const void *pMem, int iLen)$/;"	f
+DumpPackage	comm/src/cm_debug.c	/^const char * DumpPackage(const void *pPkg, int iPkgLen)$/;"	f
+ERR_MSG_LEN	comm/src/cm_shm.c	12;"	d	file:
+EXCEPTION_STARTBIT	base/procmon.h	17;"	d
+EXCEPTION_TYPE	base/procmon.h	18;"	d
+FIFO_SHM_DIR	base/notify.cpp	21;"	d	file:
+FILE_SUFFIX_LEN	comm/src/cm_log.c	13;"	d	file:
+FreeList	base/list.h	/^		void FreeList() {$/;"	f	class:common::base::CListHead
+GROUP_UNSED	base/procmon.cpp	9;"	d	file:
+GenPrimeArray	comm/src/cm_math.c	/^int GenPrimeArray(int iMax, int iNum, int array[])$/;"	f
+GetBuffer	comm/src/cm_binary.c	/^int GetBuffer(char **p, int *piLen, char *pBuf, unsigned CM_INT32 *piBufLen)$/;"	f
+GetBufferNoLen	comm/src/cm_binary.c	/^int GetBufferNoLen(char **p, int *piLen, char *pBuf, CM_INT32 iBufLen)$/;"	f
+GetBufferPtr	comm/src/cm_binary.c	/^int GetBufferPtr(char **p, int *piLen, char **pBufPtr, CM_INT32 *piBufLen)$/;"	f
+GetChar	comm/src/cm_binary.c	/^int GetChar(char **p, int *piLen, char *cValue)$/;"	f
+GetDWord	comm/src/cm_binary.c	/^int GetDWord(char **p, int *piLen, unsigned CM_INT32 *plValue)$/;"	f
+GetIpByName	comm/src/cm_net.c	/^int GetIpByName(const char *sInterfaceName, uint32_t *pIp)$/;"	f
+GetQWord	comm/src/cm_binary.c	/^int GetQWord(char **p, int *piLen, uint64_t *pqwValue)$/;"	f
+GetReadOnlyShm	comm/src/cm_shm.c	/^void * GetReadOnlyShm(int iKey)$/;"	f
+GetShm	comm/src/cm_shm.c	/^void * GetShm(int iKey, int iSize, int iFlag)$/;"	f
+GetShmEx	comm/src/cm_shm.c	/^int GetShmEx(void **pShm, int iKey, int iSize, int iFlag)$/;"	f
+GetShmFrocely	comm/src/cm_shm.c	/^int GetShmFrocely(void **pstShm, int iKey, int iSize)$/;"	f
+GetShmSize	comm/src/cm_shm.c	/^int GetShmSize(int iKey) $/;"	f
+GetWord	comm/src/cm_binary.c	/^int GetWord(char **p, int *piLen, unsigned short *pshValue)$/;"	f
+GroupInfo	base/procmon.h	/^			} GroupInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon5
+INIT_LIST_HEAD	base/list.h	23;"	d
+InitList	base/list.h	/^		void InitList() {$/;"	f	class:common::base::CListHead
+InitLogFile	comm/src/cm_log.c	/^int InitLogFile(LogFile * pstLogFile, const char *sBaseFileName, int iShiftType, int iMaxLogNum, CM_INT32 lMaxSize)$/;"	f
+Instance	singleton.h	/^				static T *Instance() {$/;"	f	class:common::singleton::SingleTon
+Instance	singleton.h	/^				static T* Instance(T *proto) {$/;"	f	class:common::singleton::CreateByProto
+Instance	singleton.h	/^				static T* Instance(T *proto) {$/;"	f	class:common::singleton::CreateNew
+Instance_	singleton.h	/^				static T* Instance_;$/;"	m	class:common::singleton::SingleTon
+Instance_	singleton.h	/^			T* SingleTon <T, CreatePolicy >::Instance_ = NULL;$/;"	m	class:common::singleton::SingleTon
+IsInnerIp	comm/src/cm_net.c	/^int IsInnerIp(in_addr_t dwIp)$/;"	f
+IsPrime	comm/src/cm_math.c	/^int IsPrime(int iNum)$/;"	f
+LIST_HEAD_INIT	base/list.h	21;"	d
+LOCK_FILE_NAME_LEN	comm/src/cm_shm.c	148;"	d	file:
+LOG	base/log.h	6;"	d
+LOG_FORMAT_TYPE_NOTIME	comm/src/cm_log.h	38;"	d
+LOG_FORMAT_TYPE_TIME	comm/src/cm_log.h	39;"	d
+LOG_SHIFT_BY_COUNT	comm/src/cm_log.h	36;"	d
+LOG_SHIFT_BY_SIZE	comm/src/cm_log.h	35;"	d
+ListAdd	base/list.h	/^		void ListAdd(CListHead &n) {$/;"	f	class:common::base::CListHead
+ListAdd	base/list.h	/^		void ListAdd(CListHead *n) {$/;"	f	class:common::base::CListHead
+ListAddTail	base/list.h	/^		void ListAddTail(CListHead &n) {$/;"	f	class:common::base::CListHead
+ListAddTail	base/list.h	/^		void ListAddTail(CListHead *n) {$/;"	f	class:common::base::CListHead
+ListDel	base/list.h	/^		void ListDel() {$/;"	f	class:common::base::CListHead
+ListEmpty	base/list.h	/^		int ListEmpty() const {$/;"	f	class:common::base::CListHead
+ListMove	base/list.h	/^		void ListMove(CListHead &n) {$/;"	f	class:common::base::CListHead
+ListMove	base/list.h	/^		void ListMove(CListHead *n) {$/;"	f	class:common::base::CListHead
+ListMoveTail	base/list.h	/^		void ListMoveTail(CListHead &n) {$/;"	f	class:common::base::CListHead
+ListMoveTail	base/list.h	/^		void ListMoveTail(CListHead *n) {$/;"	f	class:common::base::CListHead
+ListNext	base/list.h	/^		CListHead *ListNext(){$/;"	f	class:common::base::CListHead
+ListNext	base/list.h	/^		CListObject<T> *ListNext() {$/;"	f	class:common::base::CListObject
+ListOwner	base/list.h	/^		T *ListOwner() {$/;"	f	class:common::base::CListObject
+ListPrev	base/list.h	/^		CListHead *ListPrev(){$/;"	f	class:common::base::CListHead
+ListPrev	base/list.h	/^		CListObject<T> *ListPrev() {$/;"	f	class:common::base::CListObject
+Log	comm/src/cm_log.c	/^int Log(LogFile *pstLogFile, int iLogFormat, const char *sFormat, ...)$/;"	f
+LogFile	comm/src/cm_log.h	/^} LogFile;$/;"	t	typeref:struct:__anon11
+MAXPATHLEN	base/misc.h	11;"	d
+MAX_BUFFER_LEN	comm/src/cm_binary.c	234;"	d	file:
+MAX_CONFIG_LEN	comm/src/cm_cfg.c	7;"	d	file:
+MAX_FILEPATH_LEN	base/procmon.h	10;"	d
+MAX_LISTENING_NUM	comm/src/cm_net.c	65;"	d	file:
+MAX_LOG_FILE_NAME_LEN	comm/src/cm_log.h	13;"	d
+MAX_MSG_BUFF	base/procmon.h	13;"	d
+MAX_PROC_GROUP_NUM	base/procmon.h	12;"	d
+MIN_NOTIFY_TIME_CYCLE	base/procmon.cpp	73;"	d	file:
+MSG_EXPIRE_TIME	base/procmon.h	14;"	d
+MSG_ID_SERVER	base/procmon.h	20;"	d
+MSG_SRC_CLIENT	base/procmon.h	22;"	d
+MSG_SRC_SERVER	base/procmon.h	21;"	d
+MSG_VERSION	base/procmon.h	15;"	d
+NEED_BLOCK	comm/src/cm_net.h	22;"	d
+NO_BLOCK	comm/src/cm_net.h	21;"	d
+NextOwner	base/list.h	/^		T *NextOwner(){$/;"	f	class:common::base::CListObject
+OBJ	Makefile	/^OBJ = $(COMM)\/test.o \\$/;"	m
+OBJS	comm/example/Makefile	/^OBJS=$(CSRC:.c=.o) $/;"	m
+OBJS	comm/src/Makefile	/^OBJS=$(CSRC:.c=.o) $/;"	m
+PERSION_ARRAY_SIZE	comm/example/test_cm_shm.c	11;"	d	file:
+PKG_LEN	comm/src/cm_debug.c	4;"	d	file:
+PROCMON_CMD_FORK	base/procmon.h	40;"	d
+PROCMON_CMD_KILL	base/procmon.h	38;"	d
+PROCMON_CMD_LOAD	base/procmon.h	39;"	d
+PROCMON_EVENT_FORKFAIL	base/procmon.h	32;"	d
+PROCMON_EVENT_LATENCY	base/procmon.h	28;"	d
+PROCMON_EVENT_LOWSRATE	base/procmon.h	27;"	d
+PROCMON_EVENT_MQKEYCONFIGERROR	base/procmon.h	33;"	d
+PROCMON_EVENT_OTFMEM	base/procmon.h	29;"	d
+PROCMON_EVENT_OVERLOAD	base/procmon.h	26;"	d
+PROCMON_EVENT_PROCDEAD	base/procmon.h	25;"	d
+PROCMON_EVENT_PROCDOWN	base/procmon.h	30;"	d
+PROCMON_EVENT_PROCUP	base/procmon.h	31;"	d
+PROCMON_EVENT_QSTATNULL	base/procmon.h	35;"	d
+PROCMON_EVENT_TASKPAUSE	base/procmon.h	34;"	d
+PROCMON_STATUS_LATENCY	base/procmon.h	45;"	d
+PROCMON_STATUS_LOWSRATE	base/procmon.h	44;"	d
+PROCMON_STATUS_OK	base/procmon.h	42;"	d
+PROCMON_STATUS_OTFMEM	base/procmon.h	46;"	d
+PROCMON_STATUS_OVERLOAD	base/procmon.h	43;"	d
+PROC_RELOAD_NORMAL	base/procmon.h	50;"	d
+PROC_RELOAD_START	base/procmon.h	51;"	d
+PROC_RELOAD_WAIT_NEW	base/procmon.h	52;"	d
+Person	comm/example/test_cm_shm.c	/^struct Person {$/;"	s	file:
+PrevOwner	base/list.h	/^		T *PrevOwner(){$/;"	f	class:common::base::CListObject
+ProcEvent	base/procmon.h	/^			} ProcEvent;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon7
+ProcGroupObj	base/procmon.h	/^			} ProcGroupObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon9
+ProcInfo	base/procmon.h	/^			} ProcInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon6
+ProcMonMsg	base/procmon.h	/^			} ProcMonMsg;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon8
+ProcObj	base/procmon.h	/^			} ProcObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon10
+ProtoInstance_	singleton.h	/^				static T* ProtoInstance_;$/;"	m	class:common::singleton::SingleTon
+ProtoInstance_	singleton.h	/^			T* SingleTon <T, CreatePolicy >::ProtoInstance_ = NULL;$/;"	m	class:common::singleton::SingleTon
+ResetList	base/list.h	/^		void ResetList() {$/;"	f	class:common::base::CListHead
+SHM_ID	comm/example/test_cm_shm.c	9;"	d	file:
+SOCK_MAX_BIND	base/commu.h	12;"	d
+SOCK_TYPE_NOTIFY	base/commu.h	11;"	d
+SOCK_TYPE_TCP	base/commu.h	8;"	d
+SOCK_TYPE_UDP	base/commu.h	9;"	d
+SOCK_TYPE_UNIX	base/commu.h	10;"	d
+STRING_BUFFER_LEN	comm/src/cm_time.c	7;"	d	file:
+SetNBLock	comm/src/cm_net.c	/^int SetNBLock(int iSock)$/;"	f
+SetProto	singleton.h	/^				static void SetProto(T *proto) {$/;"	f	class:common::singleton::SingleTon
+ShiftFiles	comm/src/cm_log.c	/^static int ShiftFiles(LogFile *pstLogFile)$/;"	f	file:
+SingleTon	singleton.h	/^		template< class T, template<class> class CreatePolicy = CreateNew > class SingleTon$/;"	c	namespace:common::singleton
+TARGET	Makefile	/^TARGET=libcommon.a$/;"	m
+TConnExtInfo	base/commu.h	/^			} TConnExtInfo;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon4
+WritePid	comm/src/cm_process.c	/^int WritePid(const char *sPidFilePath)$/;"	f
+_BASE_LOG_H_	base/log.h	2;"	d
+_BASE_PROCMON_H_	base/procmon.h	2;"	d
+_CM_BINARY_H_	comm/src/cm_binary.h	2;"	d
+_CM_CFG_H_	comm/src/cm_cfg.h	2;"	d
+_CM_DEBUG_H_	comm/src/cm_debug.h	2;"	d
+_CM_LOG_H_	comm/src/cm_log.h	2;"	d
+_CM_MATH_H_	comm/src/cm_math.h	2;"	d
+_CM_NET_H_	comm/src/cm_net.h	2;"	d
+_CM_PROCESS_H_	comm/src/cm_process.h	2;"	d
+_CM_SHM_H_	comm/src/cm_shm.h	2;"	d
+_CM_TIME_H_	comm/src/cm_time.h	2;"	d
+_CM_TYPE_H_	comm/src/cm_type.h	2;"	d
+_COMMU_H_	base/commu.h	2;"	d
+_GetNameAndVal	comm/src/cm_cfg.c	/^static int _GetNameAndVal(char * sLine, char * sName, char * sVal)$/;"	f	file:
+_GetShmAndForcely	comm/src/cm_shm.c	/^static int _GetShmAndForcely(void **pstShm, int iKey, int iSize)$/;"	f	file:
+_InitDefault	comm/src/cm_cfg.c	/^static void _InitDefault(va_list ap)$/;"	f	file:
+_LIST_H_	base/list.h	2;"	d
+_MISC_H_	base/misc.h	2;"	d
+_NOTIFY_H_	base/notify.h	2;"	d
+_SINGLE_TON_H_	singleton.h	2;"	d
+_SetVal	comm/src/cm_cfg.c	/^static int _SetVal(va_list ap, char *sCfgName, char *sCfgVal)$/;"	f	file:
+__builtin_prefetch	base/list.h	12;"	d
+__list_add	base/list.h	/^static inline void __list_add(struct list_head *p,$/;"	f	namespace:common::base
+__list_del	base/list.h	/^static inline void __list_del(struct list_head *prev, struct list_head *next)$/;"	f	namespace:common::base
+__list_for_each	base/list.h	161;"	d
+__list_for_each_prev	base/list.h	170;"	d
+__list_splice	base/list.h	/^static inline void __list_splice(struct list_head *list,$/;"	f	namespace:common::base
+_get_name	comm/src/cm_cfg.c	/^static int _get_name(char * desc, char * src)$/;"	f	file:
+adjust_proc_time	base/procmon.h	/^				time_t adjust_proc_time;$/;"	m	struct:common::base::procmon::__anon5
+affinity_	base/procmon.h	/^				unsigned affinity_;$/;"	m	struct:common::base::procmon::__anon5
+arg1_	base/procmon.h	/^				int arg1_;$/;"	m	struct:common::base::procmon::__anon7
+arg2_	base/procmon.h	/^				int arg2_;$/;"	m	struct:common::base::procmon::__anon7
+atoaddr	comm/src/cm_net.c	/^struct in_addr *atoaddr(const char *sAddress)$/;"	f
+atoport	comm/src/cm_net.c	/^int atoport(const char *sService, const char *sProto)$/;"	f
+base	base/commu.h	/^	namespace base {$/;"	n	namespace:common
+base	base/list.h	/^	namespace base {$/;"	n	namespace:common
+base	base/misc.h	/^	namespace base $/;"	n	namespace:common
+base	base/notify.h	/^	namespace base {$/;"	n	namespace:common
+base	base/procmon.h	/^	namespace base {$/;"	n	namespace:common
+basepath_	base/procmon.h	/^				char basepath_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
+blob_type	base/commu.h	/^			} blob_type;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon3
+bucket_	base/procmon.h	/^				list_head_t bucket_[BUCKET_SIZE];$/;"	m	struct:common::base::procmon::__anon9
+cb_func	base/commu.h	/^			typedef int (*cb_func)(unsigned flow, void *arg1, void *arg2);$/;"	t	namespace:common::base::commu
+cb_type	base/commu.h	/^			} cb_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon1
+check_process_exist	base/misc.cpp	/^int CMisc::check_process_exist(pid_t pid)$/;"	f	class:CMisc
+cmd_	base/procmon.h	/^				unsigned cmd_;$/;"	m	struct:common::base::procmon::__anon7
+common	base/commu.h	/^namespace common{$/;"	n
+common	base/list.h	/^namespace common {$/;"	n
+common	base/misc.h	/^namespace common$/;"	n
+common	base/notify.h	/^namespace common {$/;"	n
+common	base/procmon.h	/^namespace common {$/;"	n
+common	singleton.h	/^namespace common {$/;"	n
+commu	base/commu.h	/^		namespace commu {$/;"	n	namespace:common::base
+commu_	base/procmon.h	/^					CCommu * commu_;$/;"	m	class:common::base::procmon::CProcMonCli
+commu_	base/procmon.h	/^					CCommu * commu_;$/;"	m	class:common::base::procmon::CProcMonSrv
+ctrl_type	base/commu.h	/^			} ctrl_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon2
+cur_group_	base/procmon.h	/^					int cur_group_;$/;"	m	class:common::base::procmon::CProcMonSrv
+curprocnum_	base/procmon.h	/^				int curprocnum_;$/;"	m	struct:common::base::procmon::__anon9
+data	base/commu.h	/^				char *data; \/\/ data buf$/;"	m	struct:common::base::commu::__anon3
+errprocnum_	base/procmon.h	/^				int errprocnum_;$/;"	m	struct:common::base::procmon::__anon9
+etcfile_	base/procmon.h	/^				char etcfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
+exefile_	base/procmon.h	/^				char exefile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
+exitsignal_	base/procmon.h	/^				int exitsignal_;$/;"	m	struct:common::base::procmon::__anon5
+extdata	base/commu.h	/^				void *extdata;$/;"	m	struct:common::base::commu::__anon3
+fd_	base/commu.h	/^				int fd_;$/;"	m	struct:common::base::commu::__anon4
+fini	base/procmon.cpp	/^void CMQCommu::fini()$/;"	f	class:CMQCommu
+func_args_	base/commu.h	/^					void *func_args_[CB_TIMEOUT + 1];$/;"	m	class:common::base::commu::CTCommu
+func_list_	base/commu.h	/^					cb_func func_list_[CB_TIMEOUT + 1];$/;"	m	class:common::base::commu::CTCommu
+g_anf_shm_fifo	base/notify.cpp	/^int g_anf_shm_fifo = false;$/;"	v
+g_astPersons	comm/example/test_cm_shm.c	/^struct Person g_astPersons[PERSION_ARRAY_SIZE];$/;"	v	typeref:struct:Person
+get_fifo_path	base/notify.cpp	/^char *CNotify::get_fifo_path(int key)$/;"	f	class:CNotify
+getip	base/misc.cpp	/^unsigned CMisc::getip(const char *ifname) $/;"	f	class:CMisc
+group_type_	base/procmon.h	/^				unsigned group_type_;$/;"	m	struct:common::base::procmon::__anon5
+groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon5
+groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon6
+groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon7
+groupinfo_	base/procmon.h	/^				GroupInfo groupinfo_;$/;"	m	struct:common::base::procmon::__anon9
+heartbeat_	base/procmon.h	/^				unsigned heartbeat_;$/;"	m	struct:common::base::procmon::__anon5
+hton64	comm/src/cm_binary.h	/^static inline uint64_t hton64(uint64_t qwVal)$/;"	f
+iAge	comm/example/test_cm_shm.c	/^	int iAge;$/;"	m	struct:Person	file:
+iMaxLogNum	comm/src/cm_log.h	/^	int iMaxLogNum;$/;"	m	struct:__anon11
+iSex	comm/example/test_cm_shm.c	/^	int iSex;$/;"	m	struct:Person	file:
+iShiftType	comm/src/cm_log.h	/^	int iShiftType;$/;"	m	struct:__anon11
+init	base/procmon.cpp	/^int CMQCommu::init(void *args)$/;"	f	class:CMQCommu
+lLastShiftTime	comm/src/cm_log.h	/^	CM_INT32 lLastShiftTime;$/;"	m	struct:__anon11
+lLogLineCount	comm/src/cm_log.h	/^	CM_INT32 lLogLineCount;$/;"	m	struct:__anon11
+lMaxCount	comm/src/cm_log.h	/^	CM_INT32 lMaxCount;$/;"	m	struct:__anon11
+lMaxFileSize	comm/src/cm_log.h	/^	CM_INT32 lMaxFileSize;$/;"	m	struct:__anon11
+lMaxLineCount	comm/src/cm_log.h	/^	CM_INT32 lMaxLineCount;$/;"	m	struct:__anon11
+len	base/commu.h	/^				int len;$/;"	m	struct:common::base::commu::__anon3
+list_	base/procmon.h	/^				list_head_t list_;$/;"	m	struct:common::base::procmon::__anon10
+list_add	base/list.h	/^static inline void list_add(struct list_head *p, struct list_head *head)$/;"	f	namespace:common::base
+list_add_tail	base/list.h	/^static inline void list_add_tail(struct list_head *p, struct list_head *head)$/;"	f	namespace:common::base
+list_del	base/list.h	/^static inline void list_del(struct list_head *entry)$/;"	f	namespace:common::base
+list_del_init	base/list.h	/^static inline void list_del_init(struct list_head *entry)$/;"	f	namespace:common::base
+list_empty	base/list.h	/^static inline int list_empty(const struct list_head *head)$/;"	f	namespace:common::base
+list_entry	base/list.h	148;"	d
+list_for_each	base/list.h	156;"	d
+list_for_each_entry	base/list.h	181;"	d
+list_for_each_prev	base/list.h	165;"	d
+list_head	base/list.h	/^struct list_head{$/;"	s	namespace:common::base
+list_head_t	base/list.h	/^typedef struct list_head list_head_t;$/;"	t	namespace:common::base	typeref:struct:common::base::list_head
+list_move	base/list.h	/^static inline void list_move(struct list_head *list, struct list_head *head)$/;"	f	namespace:common::base
+list_move_tail	base/list.h	/^static inline void list_move_tail(struct list_head *list, struct list_head *head)$/;"	f	namespace:common::base
+list_splice	base/list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head)$/;"	f	namespace:common::base
+list_splice_init	base/list.h	/^static inline void list_splice_init(struct list_head *list,$/;"	f	namespace:common::base
+localip_	base/commu.h	/^				unsigned localip_;$/;"	m	struct:common::base::commu::__anon4
+localport_	base/commu.h	/^				unsigned short localport_;$/;"	m	struct:common::base::commu::__anon4
+logfile	base/procmon.h	/^					LogFile * logfile;$/;"	m	class:common::base::procmon::CMQCommu
+logfile	base/procmon.h	/^					LogFile * logfile;$/;"	m	class:common::base::procmon::CProcMonSrv
+main	base/procmon.cpp	/^int main() $/;"	f
+main	comm/example/test_cm_binary.c	/^int main()$/;"	f
+main	comm/example/test_cm_cfg.c	/^int main(int argc, char * argv[])$/;"	f
+main	comm/example/test_cm_debug.c	/^int main()$/;"	f
+main	comm/example/test_cm_log.c	/^int main(int argc, char * argv[])$/;"	f
+main	comm/example/test_cm_net.c	/^int main()$/;"	f
+main	comm/example/test_cm_process.c	/^int main()$/;"	f
+main	comm/example/test_cm_shm.c	/^int main(int argc, char * argv[])$/;"	f
+main	test.cpp	/^int main() $/;"	f
+maxprocnum_	base/procmon.h	/^				unsigned maxprocnum_;$/;"	m	struct:common::base::procmon::__anon5
+minprocnum_	base/procmon.h	/^				unsigned minprocnum_;$/;"	m	struct:common::base::procmon::__anon5
+monsrc_cb	base/procmon.h	/^			typedef void (*monsrc_cb) (const GroupInfo * groupinfo,$/;"	t	namespace:common::base::procmon
+mpfile_	base/procmon.h	/^				char mpfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
+mqid_	base/procmon.h	/^					int mqid_;$/;"	m	class:common::base::procmon::CMQCommu
+mqkey	base/procmon.h	/^				int mqkey;$/;"	m	struct:common::base::procmon::__anon5
+msg_	base/procmon.h	/^					ProcMonMsg msg_[2];$/;"	m	class:common::base::procmon::CProcMonSrv
+msgcontent_	base/procmon.h	/^				char msgcontent_[MAX_MSG_BUFF];$/;"	m	struct:common::base::procmon::__anon8
+msglen_	base/procmon.h	/^				long msglen_;$/;"	m	struct:common::base::procmon::__anon8
+msgtype_	base/procmon.h	/^				long msgtype_;$/;"	m	struct:common::base::procmon::__anon8
+next	base/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:common::base::list_head	typeref:struct:common::base::list_head::list_head
+notify	base/notify.h	/^		namespace notify {$/;"	n	namespace:common::base
+notify_init	base/notify.cpp	/^int CNotify::notify_init(int key, char *fifoname, size_t fifoname_size)$/;"	f	class:CNotify
+notify_recv	base/notify.cpp	/^int CNotify::notify_recv(int fd) $/;"	f	class:CNotify
+notify_send	base/notify.cpp	/^int CNotify::notify_send(int fd)$/;"	f	class:CNotify
+ntoh64	comm/src/cm_binary.h	43;"	d
+objlist	base/list.h	/^		struct list_head objlist;$/;"	m	class:common::base::CListHead	typeref:struct:common::base::CListHead::list_head
+offsetof	base/list.h	133;"	d
+offsetof	base/list.h	135;"	d
+owner	base/commu.h	/^				void *owner;$/;"	m	struct:common::base::commu::__anon3
+pLogFile	comm/src/cm_log.h	/^	FILE *pLogFile;$/;"	m	struct:__anon11
+prev	base/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:common::base::list_head	typeref:struct:common::base::list_head::
+proc_groups_	base/procmon.h	/^					ProcGroupObj proc_groups_[MAX_PROC_GROUP_NUM];$/;"	m	class:common::base::procmon::CProcMonSrv
+procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon6
+procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon7
+procinfo_	base/procmon.h	/^				ProcInfo procinfo_;$/;"	m	struct:common::base::procmon::__anon10
+procmon	base/procmon.h	/^		namespace procmon {$/;"	n	namespace:common::base
+q_recv_pstat	base/procmon.h	/^				void * q_recv_pstat;$/;"	m	struct:common::base::procmon::__anon5
+realloc_safe	base/misc.h	/^				static inline void * realloc_safe(void *ptr, size_t size)$/;"	f	class:common::base::CMisc
+recv	base/procmon.cpp	/^int CMQCommu::recv(ProcMonMsg *msg, long msgtype) {$/;"	f	class:CMQCommu
+recvkey	base/procmon.h	/^				unsigned int recvkey;$/;"	m	struct:common::base::procmon::__anon5
+recvkeysize	base/procmon.h	/^				unsigned int recvkeysize;$/;"	m	struct:common::base::procmon::__anon5
+recvtime_	base/commu.h	/^				time_t recvtime_; \/\/recv sec$/;"	m	struct:common::base::commu::__anon4
+reg_cb	base/commu.h	/^					virtual int reg_cb(cb_type type, cb_func func, void *args = NULL) {$/;"	f	class:common::base::commu::CTCommu
+reload_	base/procmon.h	/^				unsigned reload_;$/;"	m	struct:common::base::procmon::__anon5
+reload_tag	base/procmon.h	/^					std::map<int, std::map<int, int> > reload_tag;$/;"	m	class:common::base::procmon::CProcMonSrv
+reload_time	base/procmon.h	/^				time_t reload_time;$/;"	m	struct:common::base::procmon::__anon5
+remoteip_	base/commu.h	/^				unsigned remoteip_;$/;"	m	struct:common::base::commu::__anon4
+remoteport_	base/commu.h	/^				unsigned short remoteport_;$/;"	m	struct:common::base::commu::__anon4
+reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon5
+reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon6
+reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon7
+sBaseFileName	comm/src/cm_log.h	/^	char sBaseFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon11
+sLogFileName	comm/src/cm_log.h	/^	char sLogFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon11
+send	base/procmon.cpp	/^int CMQCommu::send(ProcMonMsg *msg)$/;"	f	class:CMQCommu
+sendkey	base/procmon.h	/^				unsigned int sendkey;$/;"	m	struct:common::base::procmon::__anon5
+sendkeysize	base/procmon.h	/^				unsigned int sendkeysize;$/;"	m	struct:common::base::procmon::__anon5
+singleton	singleton.h	/^	namespace singleton {$/;"	n	namespace:common
+srctype_	base/procmon.h	/^				long srctype_;$/;"	m	struct:common::base::procmon::__anon8
+status_	base/procmon.h	/^				int status_;$/;"	m	struct:common::base::procmon::__anon10
+time_diff	base/misc.h	/^				static inline int64_t time_diff(const struct timeval &tv1, const struct timeval &tv2) $/;"	f	class:common::base::CMisc
+timestamp_	base/procmon.h	/^				time_t timestamp_;$/;"	m	struct:common::base::procmon::__anon6
+timestamp_	base/procmon.h	/^				time_t timestamp_;$/;"	m	struct:common::base::procmon::__anon8
+tv_usec	base/commu.h	/^				suseconds_t tv_usec; \/\/ recv usec$/;"	m	struct:common::base::commu::__anon4
+type	base/procmon.h	/^				unsigned int type;$/;"	m	struct:common::base::procmon::__anon5
+type_	base/commu.h	/^				int type_; \/\/ STREAM DGRAM ...$/;"	m	struct:common::base::commu::__anon4
+~CCommu	base/procmon.h	/^					virtual ~CCommu() {}$/;"	f	class:common::base::procmon::CCommu
+~CListObject	base/list.h	/^		~CListObject() {$/;"	f	class:common::base::CListObject
+~CMQCommu	base/procmon.cpp	/^CMQCommu::~CMQCommu()$/;"	f	class:CMQCommu
+~CTCommu	base/commu.h	/^					virtual ~CTCommu() {}$/;"	f	class:common::base::commu::CTCommu

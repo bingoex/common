@@ -53,7 +53,7 @@
 
 using namespace common::base;
 
-namespace commcon {
+namespace common {
 	namespace base {
 		namespace procmon {
 
@@ -131,8 +131,10 @@ namespace commcon {
 					void fini();
 					int recv(ProcMonMsg *msg, long msgtype = 0);
 					int send(ProcMonMsg *msg);
+					void setlog(LogFile * logfile);
 				protected:
 					int mqid_;
+					LogFile * logfile;
 			};
 
 			typedef struct {
@@ -178,7 +180,7 @@ namespace commcon {
 
 					int dump_pid_list(char *buf, int len);
 				protected:
-					LogFile * log_;
+					LogFile * logfile;
 					CCommu * commu_;
 
 					ProcGroupObj proc_groups_[MAX_PROC_GROUP_NUM];
