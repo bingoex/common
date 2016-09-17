@@ -179,6 +179,7 @@ namespace common {
 					void kill_group(int grp_id, int signo);
 
 					int dump_pid_list(char *buf, int len);
+
 				protected:
 					LogFile * logfile;
 					CCommu * commu_;
@@ -192,7 +193,8 @@ namespace common {
 					bool do_recv(long msgtype);
 					bool do_check();
 
-					ProcGroupObj * find_group(int groupid, int procid);
+					ProcGroupObj * find_group(int groupid);
+
 					int add_proc(int groupid, const ProcInfo * procinfo);
 					ProcObj * find_proc(int groupid, int procid);
 					void del_proc(int groupid, int procid);
@@ -223,6 +225,8 @@ namespace common {
 
 					void run();
 					void exception_report(int signo);
+
+					void set_log(LogFile * logflie);
 				protected:
 					CCommu * commu_;
 			};
