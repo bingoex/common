@@ -3,6 +3,8 @@
 #include <errno.h>
 #include <sys/shm.h>
 #include <sys/mman.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 #include "shmcommu.h"
 #include "procmon.h"
@@ -309,6 +311,195 @@ bool CProcMonSrv::check_groupbusy(int groupid)
 
 	return false;
 }
+
+bool CProcMonSrv::do_check()
+{
+	ProcObj * proc = NULL;
+	ProcGroupObj * group = NULL;
+	int i, j;
+
+	for (i = 0; i < cur_group_; i++) {
+		group = &proc_groups_[i];
+		if (group->curprocnum_ != GROUP_UNSED) {
+			//TODO
+			check_group(&group->groupinfo_, group->curprocnum_);
+
+			//TODO check if need group reload
+			GroupInfo * reload_group = &group->groupinfo_;
+			if (reload_group->reload_ > 0) {
+				// hort reload
+				if (reload_group->reload_ == PROC_RELOAD_WAIT_NEW) {
+					if (time(NULL) - reload_group->reload_time > 60) {
+						LOG("reload new proc start failed, kill cur group %d", i);
+						kill_group(reload_group->groupid_, SIGUSR1);
+						reload_group->reload_ = 0;
+					} else {
+						LOG("wait for new proc start...");
+					}
+
+					continue;
+				}
+
+				for(j = 0; j < BUCKET_SIZE; j++) {
+					list_for_each_entry(proc, &group->bucket_[j], list_)
+					{
+						do_fork(reload_group->basepath_, reload_group->exefile_, reload_group->etcfile_, 1, 
+								reload_group->group_type_, reload_group->affinity_);
+					}
+				}
+				reload_group->reload_ = PROC_RELOAD_WAIT_NEW;
+			}
+			else {
+				for (j = 0; j < BUCKET_SIZE; j++) {
+					list_for_each_entry(proc, &group->bucket_[j], list_)
+					{
+						if (unlikely(check_proc(&group->groupinfo_, &proc->procinfo_))) {
+							//some proc has bean deleted , go back to list head & travel again
+							j--;
+							break;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return true;
+}
+
+int CProcMonSrv::dump_pid_list(char *buf, int len)
+{
+#define WRITE_BUF(fmt, args...) \
+	do { \
+		used += snprintf(buf + used, len - used, fmt, ##args); \
+	} while(0)
+
+	ProcObj *proc = NULL;
+	ProcGroupObj * group = NULL;
+	static int mypid = getpid();
+	int used = 0;
+
+	WRITE_BUF("%d [ANF_CTRL]\n", mypid);
+	for (int i = 0; i < cur_group_; i++){
+		group = &proc_groups_[i];
+		if (group->curprocnum_ == GROUP_UNSED)
+			continue;
+
+		WRITE_BUF("\nGroupId[%d]\n", i);
+		for (int j = 0; j < BUCKET_SIZE; j++) {
+			list_for_each_entry(proc, &group->bucket_[j], list_)
+			{
+				WRITE_BUF("%d\n", proc->procinfo_.procid_);
+			}
+		}
+	}
+
+	return used;
+}
+
+
+void CProcMonSrv::killall(int signo)
+{
+	ProcObj *proc = NULL;
+	ProcGroupObj * group = NULL;
+
+	for (int i = 0; i < cur_group_; i++){
+		group = &proc_groups_[i];
+
+		if (group->curprocnum_ == GROUP_UNSED)
+			continue;
+
+		for (int j = 0; j < BUCKET_SIZE; j++) {
+			list_for_each_entry(proc, &group->bucket_[j], list_)
+			{
+				do_kill(proc->procinfo_.procid_, signo);
+			}
+		}
+	}
+}
+
+void CProcMonSrv::kill_group(int grp_id, int signo)
+{
+	ProcObj *proc = NULL;
+	ProcGroupObj * group = NULL;
+	map<int , int> proc_value;
+
+	for (int i = 0; i < cur_group_; i++){
+		group = &proc_groups_[i];
+
+		if (group->curprocnum_ != GROUP_UNSED && group->groupinfo_.groupid_ == grp_id) {
+			for (int j = 0; j < BUCKET_SIZE; j++) {
+				list_for_each_entry(proc, &group->bucket_[j], list_)
+				{
+					proc_value[proc->procinfo_.procid_] = 1;
+				}
+			}
+
+			break;
+		}
+	}
+
+	map<int, int>::iterator p;
+	for (p = proc_value.begin(); p != proc_value.end(); p++) {
+		do_kill(p->first, signo);
+
+		del_proc(grp_id, p->first);
+	}
+}
+
+
+int CProcMonSrv::add_proc(int groupid, const ProcInfo * procinfo)
+{
+	if (groupid >= cur_group_)
+		return -1;
+
+	ProcObj * proc = new ProcObj;
+
+	memcpy(&proc->procinfo_, procinfo, sizeof(ProcInfo));
+	proc->status_ = PROCMON_STATUS_OK;
+	INIT_LIST_HEAD(&proc->list_);
+
+	ProcGroupObj * group = &proc_groups_[groupid];
+	list_add(&proc->list_, &group->bucket_[procinfo->procid_ % BUCKET_SIZE]);
+	group->curprocnum_++;
+
+	return 0;
+}
+
+ProcGroupObj * CProcMonSrv::find_group(int groupid)
+{
+	ProcGroupObj * group = NULL;
+
+	for (int i = 0; i < cur_group_; i++) {
+		group = &proc_groups_[i];
+
+		if (group->groupinfo_.groupid_ == groupid && group->curprocnum_ != GROUP_UNSED) {
+			return group;
+		}
+	}
+
+	return NULL;
+}
+
+ProcObj * CProcMonSrv::find_proc(int groupid, int procid)
+{
+	if (groupid >= cur_group_)
+		return NULL;
+
+	ProcGroupObj * group = &proc_groups_[groupid];
+	int bucket = procid % BUCKET_SIZE;
+	ProcObj * proc = NULL;
+	list_for_each_entry(proc, &group->bucket_[bucket], list_)
+	{
+		if (proc->procinfo_.procid_ == procid)
+			return proc;
+	}
+
+	return NULL;
+}
+
+
+
 
 
 
