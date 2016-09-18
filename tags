@@ -4,11 +4,15 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ADJUST_PROC_CYCLE	base/procmon.cpp	78;"	d	file:
-ADJUST_PROC_DELAY	base/procmon.cpp	77;"	d	file:
+ADJUST_PROC_CYCLE	base/procmon.cpp	84;"	d	file:
+ADJUST_PROC_DELAY	base/procmon.cpp	83;"	d	file:
 ALL_BINARY	comm/example/Makefile	/^ALL_BINARY = test_cm_cfg test_cm_log test_cm_shm test_cm_debug \\$/;"	m
 ARGS	comm/example/Makefile	/^ARGS = -g -Wall -fno-strict-aliasing #-Qunused-arguments$/;"	m
 ARGS	comm/src/Makefile	/^ARGS = -g -Wall -fno-strict-aliasing$/;"	m
+ATOMIC_INIT	base/atomic_asm.h	18;"	d
+ATOMIC_INIT	base/atomic_asm8.h	18;"	d
+ATOMIC_INIT	base/atomic_gcc.h	14;"	d
+ATOMIC_INIT	base/atomic_gcc8.h	16;"	d
 AddBuffer	comm/src/cm_binary.c	/^int AddBuffer(char **p, int *piLen, const char *pBuf, CM_INT32 iBufLen)$/;"	f
 AddBufferNoLen	comm/src/cm_binary.c	/^int AddBufferNoLen(char **p, int *piLen, const char *pBuf, CM_INT32 iBufLen)$/;"	f
 AddChar	comm/src/cm_binary.c	/^int AddChar(char **p, int *piLen, char cValue)$/;"	f
@@ -18,17 +22,17 @@ AddWord	comm/src/cm_binary.c	/^int AddWord(char **p, int *piLen, unsigned short 
 BASE	Makefile	/^BASE = ..\/common\/base$/;"	m
 BUCKET_SIZE	base/procmon.h	11;"	d
 BUF_LEN	comm/example/test_cm_binary.c	7;"	d	file:
-CB_CONNECTED	base/commu.h	/^				CB_CONNECTED = 0,$/;"	e	enum:common::base::commu::__anon1
-CB_DISCONNECT	base/commu.h	/^				CB_DISCONNECT,$/;"	e	enum:common::base::commu::__anon1
-CB_HANGUP	base/commu.h	/^				CB_HANGUP,$/;"	e	enum:common::base::commu::__anon1
-CB_OVERLOAD	base/commu.h	/^				CB_OVERLOAD,$/;"	e	enum:common::base::commu::__anon1
-CB_RECVDATA	base/commu.h	/^				CB_RECVDATA,$/;"	e	enum:common::base::commu::__anon1
-CB_RECVERROR	base/commu.h	/^				CB_RECVERROR,$/;"	e	enum:common::base::commu::__anon1
-CB_RECVNONE	base/commu.h	/^				CB_RECVNONE,$/;"	e	enum:common::base::commu::__anon1
-CB_SENDDATA	base/commu.h	/^				CB_SENDDATA,$/;"	e	enum:common::base::commu::__anon1
-CB_SENDDONE	base/commu.h	/^				CB_SENDDONE,$/;"	e	enum:common::base::commu::__anon1
-CB_SENDERROR	base/commu.h	/^				CB_SENDERROR,$/;"	e	enum:common::base::commu::__anon1
-CB_TIMEOUT	base/commu.h	/^				CB_TIMEOUT,$/;"	e	enum:common::base::commu::__anon1
+CB_CONNECTED	base/commu.h	/^				CB_CONNECTED = 0,$/;"	e	enum:common::base::commu::__anon3
+CB_DISCONNECT	base/commu.h	/^				CB_DISCONNECT,$/;"	e	enum:common::base::commu::__anon3
+CB_HANGUP	base/commu.h	/^				CB_HANGUP,$/;"	e	enum:common::base::commu::__anon3
+CB_OVERLOAD	base/commu.h	/^				CB_OVERLOAD,$/;"	e	enum:common::base::commu::__anon3
+CB_RECVDATA	base/commu.h	/^				CB_RECVDATA,$/;"	e	enum:common::base::commu::__anon3
+CB_RECVERROR	base/commu.h	/^				CB_RECVERROR,$/;"	e	enum:common::base::commu::__anon3
+CB_RECVNONE	base/commu.h	/^				CB_RECVNONE,$/;"	e	enum:common::base::commu::__anon3
+CB_SENDDATA	base/commu.h	/^				CB_SENDDATA,$/;"	e	enum:common::base::commu::__anon3
+CB_SENDDONE	base/commu.h	/^				CB_SENDDONE,$/;"	e	enum:common::base::commu::__anon3
+CB_SENDERROR	base/commu.h	/^				CB_SENDERROR,$/;"	e	enum:common::base::commu::__anon3
+CB_TIMEOUT	base/commu.h	/^				CB_TIMEOUT,$/;"	e	enum:common::base::commu::__anon3
 CC	comm/example/Makefile	/^CC = g++$/;"	m
 CC	comm/src/Makefile	/^CC = g++$/;"	m
 CCommu	base/procmon.h	/^					CCommu() {}$/;"	f	class:common::base::procmon::CCommu
@@ -61,9 +65,9 @@ CSRC	comm/example/Makefile	/^CSRC=$(shell ls *.c)$/;"	m
 CSRC	comm/src/Makefile	/^CSRC=$(shell ls *.c)$/;"	m
 CTCommu	base/commu.h	/^					CTCommu() {$/;"	f	class:common::base::commu::CTCommu
 CTCommu	base/commu.h	/^			class CTCommu $/;"	c	namespace:common::base::commu
-CT_CLOSE	base/commu.h	/^				CT_CLOSE,$/;"	e	enum:common::base::commu::__anon2
-CT_DISCONNECT	base/commu.h	/^				CT_DISCONNECT = 0,$/;"	e	enum:common::base::commu::__anon2
-CT_STAT	base/commu.h	/^				CT_STAT,$/;"	e	enum:common::base::commu::__anon2
+CT_CLOSE	base/commu.h	/^				CT_CLOSE,$/;"	e	enum:common::base::commu::__anon4
+CT_DISCONNECT	base/commu.h	/^				CT_DISCONNECT = 0,$/;"	e	enum:common::base::commu::__anon4
+CT_STAT	base/commu.h	/^				CT_STAT,$/;"	e	enum:common::base::commu::__anon4
 CUR_DIR	Makefile	/^CUR_DIR=$(shell pwd)$/;"	m
 C_COMM	Makefile	/^C_COMM = ..\/common\/comm\/src$/;"	m
 C_COMM_LIB	Makefile	/^C_COMM_LIB = $(C_COMM)\/cm_lib.a -I$(C_COMM) $/;"	m
@@ -102,7 +106,7 @@ EXCEPTION_TYPE	base/procmon.h	18;"	d
 FIFO_SHM_DIR	base/notify.cpp	21;"	d	file:
 FILE_SUFFIX_LEN	comm/src/cm_log.c	13;"	d	file:
 FreeList	base/list.h	/^		void FreeList() {$/;"	f	class:common::base::CListHead
-GROUP_UNSED	base/procmon.cpp	10;"	d	file:
+GROUP_UNSED	base/procmon.cpp	15;"	d	file:
 GenPrimeArray	comm/src/cm_math.c	/^int GenPrimeArray(int iMax, int iNum, int array[])$/;"	f
 GetBuffer	comm/src/cm_binary.c	/^int GetBuffer(char **p, int *piLen, char *pBuf, unsigned CM_INT32 *piBufLen)$/;"	f
 GetBufferNoLen	comm/src/cm_binary.c	/^int GetBufferNoLen(char **p, int *piLen, char *pBuf, CM_INT32 iBufLen)$/;"	f
@@ -117,7 +121,9 @@ GetShmEx	comm/src/cm_shm.c	/^int GetShmEx(void **pShm, int iKey, int iSize, int 
 GetShmFrocely	comm/src/cm_shm.c	/^int GetShmFrocely(void **pstShm, int iKey, int iSize)$/;"	f
 GetShmSize	comm/src/cm_shm.c	/^int GetShmSize(int iKey) $/;"	f
 GetWord	comm/src/cm_binary.c	/^int GetWord(char **p, int *piLen, unsigned short *pshValue)$/;"	f
-GroupInfo	base/procmon.h	/^			} GroupInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon5
+GroupInfo	base/procmon.h	/^			} GroupInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon7
+HAS_ATOMIC8	base/atomic.h	13;"	d
+HAS_ATOMIC8	base/atomic_gcc8.h	4;"	d
 INIT_LIST_HEAD	base/list.h	23;"	d
 InitList	base/list.h	/^		void InitList() {$/;"	f	class:common::base::CListHead
 InitLogFile	comm/src/cm_log.c	/^int InitLogFile(LogFile * pstLogFile, const char *sBaseFileName, int iShiftType, int iMaxLogNum, CM_INT32 lMaxSize)$/;"	f
@@ -151,7 +157,7 @@ ListOwner	base/list.h	/^		T *ListOwner() {$/;"	f	class:common::base::CListObject
 ListPrev	base/list.h	/^		CListHead *ListPrev(){$/;"	f	class:common::base::CListHead
 ListPrev	base/list.h	/^		CListObject<T> *ListPrev() {$/;"	f	class:common::base::CListObject
 Log	comm/src/cm_log.c	/^int Log(LogFile *pstLogFile, int iLogFormat, const char *sFormat, ...)$/;"	f
-LogFile	comm/src/cm_log.h	/^} LogFile;$/;"	t	typeref:struct:__anon11
+LogFile	comm/src/cm_log.h	/^} LogFile;$/;"	t	typeref:struct:__anon13
 MAXPATHLEN	base/misc.h	11;"	d
 MAX_BUFFER_LEN	comm/src/cm_binary.c	234;"	d	file:
 MAX_CONFIG_LEN	comm/src/cm_cfg.c	7;"	d	file:
@@ -160,7 +166,7 @@ MAX_LISTENING_NUM	comm/src/cm_net.c	65;"	d	file:
 MAX_LOG_FILE_NAME_LEN	comm/src/cm_log.h	13;"	d
 MAX_MSG_BUFF	base/procmon.h	13;"	d
 MAX_PROC_GROUP_NUM	base/procmon.h	12;"	d
-MIN_NOTIFY_TIME_CYCLE	base/procmon.cpp	79;"	d	file:
+MIN_NOTIFY_TIME_CYCLE	base/procmon.cpp	85;"	d	file:
 MSG_EXPIRE_TIME	base/procmon.h	14;"	d
 MSG_ID_SERVER	base/procmon.h	20;"	d
 MSG_SRC_CLIENT	base/procmon.h	22;"	d
@@ -198,13 +204,14 @@ PROC_RELOAD_START	base/procmon.h	51;"	d
 PROC_RELOAD_WAIT_NEW	base/procmon.h	52;"	d
 Person	comm/example/test_cm_shm.c	/^struct Person {$/;"	s	file:
 PrevOwner	base/list.h	/^		T *PrevOwner(){$/;"	f	class:common::base::CListObject
-ProcEvent	base/procmon.h	/^			} ProcEvent;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon7
-ProcGroupObj	base/procmon.h	/^			} ProcGroupObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon9
-ProcInfo	base/procmon.h	/^			} ProcInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon6
-ProcMonMsg	base/procmon.h	/^			} ProcMonMsg;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon8
-ProcObj	base/procmon.h	/^			} ProcObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon10
+ProcEvent	base/procmon.h	/^			} ProcEvent;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon9
+ProcGroupObj	base/procmon.h	/^			} ProcGroupObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon11
+ProcInfo	base/procmon.h	/^			} ProcInfo;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon8
+ProcMonMsg	base/procmon.h	/^			} ProcMonMsg;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon10
+ProcObj	base/procmon.h	/^			} ProcObj;$/;"	t	namespace:common::base::procmon	typeref:struct:common::base::procmon::__anon12
 ProtoInstance_	singleton.h	/^				static T* ProtoInstance_;$/;"	m	class:common::singleton::SingleTon
 ProtoInstance_	singleton.h	/^			T* SingleTon <T, CreatePolicy >::ProtoInstance_ = NULL;$/;"	m	class:common::singleton::SingleTon
+Q_STATINFO	base/shmcommu.h	/^				} Q_STATINFO;$/;"	t	namespace:common::base::commu::shmcommu	typeref:struct:common::base::commu::shmcommu::qstatinfo
 ResetList	base/list.h	/^		void ResetList() {$/;"	f	class:common::base::CListHead
 SHM_ID	comm/example/test_cm_shm.c	9;"	d	file:
 SOCK_MAX_BIND	base/commu.h	12;"	d
@@ -218,10 +225,12 @@ SetProto	singleton.h	/^				static void SetProto(T *proto) {$/;"	f	class:common::
 ShiftFiles	comm/src/cm_log.c	/^static int ShiftFiles(LogFile *pstLogFile)$/;"	f	file:
 SingleTon	singleton.h	/^		template< class T, template<class> class CreatePolicy = CreateNew > class SingleTon$/;"	c	namespace:common::singleton
 TARGET	Makefile	/^TARGET=libcommon.a$/;"	m
-TConnExtInfo	base/commu.h	/^			} TConnExtInfo;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon4
+TConnExtInfo	base/commu.h	/^			} TConnExtInfo;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon6
+WRITE_BUF	base/procmon.cpp	372;"	d	file:
 WritePid	comm/src/cm_process.c	/^int WritePid(const char *sPidFilePath)$/;"	f
 _BASE_LOG_H_	base/log.h	2;"	d
 _BASE_PROCMON_H_	base/procmon.h	2;"	d
+_BASE_SHMCOMMU_H_	base/shmcommu.h	2;"	d
 _CM_BINARY_H_	comm/src/cm_binary.h	2;"	d
 _CM_CFG_H_	comm/src/cm_cfg.h	2;"	d
 _CM_DEBUG_H_	comm/src/cm_debug.h	2;"	d
@@ -239,9 +248,15 @@ _GetShmAndForcely	comm/src/cm_shm.c	/^static int _GetShmAndForcely(void **pstShm
 _InitDefault	comm/src/cm_cfg.c	/^static void _InitDefault(va_list ap)$/;"	f	file:
 _LIST_H_	base/list.h	2;"	d
 _MISC_H_	base/misc.h	2;"	d
+_MYATOMIC_GCC8_h	base/myatomic_gcc8.h	20;"	d
 _NOTIFY_H_	base/notify.h	2;"	d
 _SINGLE_TON_H_	singleton.h	2;"	d
 _SetVal	comm/src/cm_cfg.c	/^static int _SetVal(va_list ap, char *sCfgName, char *sCfgVal)$/;"	f	file:
+__ARCH_I386_ATOMIC8__	base/atomic_asm8.h	2;"	d
+__ARCH_I386_ATOMIC8__	base/atomic_gcc8.h	2;"	d
+__ARCH_I386_ATOMIC__	base/atomic_asm.h	2;"	d
+__ARCH_I386_ATOMIC__	base/atomic_gcc.h	2;"	d
+__ATOMIC__T	base/atomic.h	2;"	d
 __builtin_prefetch	base/list.h	12;"	d
 __list_add	base/list.h	/^static inline void __list_add(struct list_head *p,$/;"	f	namespace:common::base
 __list_del	base/list.h	/^static inline void __list_del(struct list_head *prev, struct list_head *next)$/;"	f	namespace:common::base
@@ -250,71 +265,161 @@ __list_for_each_prev	base/list.h	170;"	d
 __list_splice	base/list.h	/^static inline void __list_splice(struct list_head *list,$/;"	f	namespace:common::base
 _get_name	comm/src/cm_cfg.c	/^static int _get_name(char * desc, char * src)$/;"	f	file:
 add_group	base/procmon.cpp	/^int CProcMonSrv::add_group(const GroupInfo *groupinfo)$/;"	f	class:CProcMonSrv
-adjust_proc_time	base/procmon.h	/^				time_t adjust_proc_time;$/;"	m	struct:common::base::procmon::__anon5
-affinity_	base/procmon.h	/^				unsigned affinity_;$/;"	m	struct:common::base::procmon::__anon5
-arg1_	base/procmon.h	/^				int arg1_;$/;"	m	struct:common::base::procmon::__anon7
-arg2_	base/procmon.h	/^				int arg2_;$/;"	m	struct:common::base::procmon::__anon7
+add_proc	base/procmon.cpp	/^int CProcMonSrv::add_proc(int groupid, const ProcInfo * procinfo)$/;"	f	class:CProcMonSrv
+adjust_proc_time	base/procmon.h	/^				time_t adjust_proc_time;$/;"	m	struct:common::base::procmon::__anon7
+affinity_	base/procmon.h	/^				unsigned affinity_;$/;"	m	struct:common::base::procmon::__anon7
+arg1_	base/procmon.h	/^				int arg1_;$/;"	m	struct:common::base::procmon::__anon9
+arg2_	base/procmon.h	/^				int arg2_;$/;"	m	struct:common::base::procmon::__anon9
 atoaddr	comm/src/cm_net.c	/^struct in_addr *atoaddr(const char *sAddress)$/;"	f
+atomic64_add	base/myatomic_gcc8.h	26;"	d
+atomic64_inc	base/myatomic_gcc8.h	25;"	d
+atomic64_read	base/myatomic_gcc8.h	23;"	d
+atomic64_set	base/myatomic_gcc8.h	24;"	d
+atomic64_t	base/myatomic_gcc8.h	22;"	d
+atomic8_add	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_add(int64_t i, atomic8_t *v)$/;"	f
+atomic8_add	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_add(int64_t i, atomic8_t *v)$/;"	f
+atomic8_add_negative	base/atomic_asm8.h	/^static __inline__ int atomic8_add_negative(int64_t i, atomic8_t *v)$/;"	f
+atomic8_add_negative	base/atomic_gcc8.h	/^static __inline__ int atomic8_add_negative(int64_t i, atomic8_t *v)$/;"	f
+atomic8_add_return	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_add_return(int64_t i, atomic8_t *v)$/;"	f
+atomic8_add_return	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_add_return(int64_t i, atomic8_t *v)$/;"	f
+atomic8_clear	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_clear(atomic8_t *v)$/;"	f
+atomic8_clear	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_clear(atomic8_t *v)$/;"	f
+atomic8_dec	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_dec(atomic8_t *v)$/;"	f
+atomic8_dec	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_dec(atomic8_t *v)$/;"	f
+atomic8_dec_and_test	base/atomic_asm8.h	/^static __inline__ int atomic8_dec_and_test(atomic8_t *v)$/;"	f
+atomic8_dec_and_test	base/atomic_gcc8.h	/^static __inline__ int atomic8_dec_and_test(atomic8_t *v)$/;"	f
+atomic8_dec_return	base/atomic_asm8.h	275;"	d
+atomic8_dec_return	base/atomic_gcc8.h	165;"	d
+atomic8_inc	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_inc(atomic8_t *v)$/;"	f
+atomic8_inc	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_inc(atomic8_t *v)$/;"	f
+atomic8_inc_and_test	base/atomic_asm8.h	/^static __inline__ int atomic8_inc_and_test(atomic8_t *v)$/;"	f
+atomic8_inc_and_test	base/atomic_gcc8.h	/^static __inline__ int atomic8_inc_and_test(atomic8_t *v)$/;"	f
+atomic8_inc_return	base/atomic_asm8.h	274;"	d
+atomic8_inc_return	base/atomic_gcc8.h	164;"	d
+atomic8_read	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_read(atomic8_t *v)$/;"	f
+atomic8_read	base/atomic_gcc8.h	25;"	d
+atomic8_read	base/atomic_gcc8.h	27;"	d
+atomic8_set	base/atomic_asm8.h	/^static __inline__ void atomic8_set(atomic8_t *v, int64_t i)$/;"	f
+atomic8_set	base/atomic_gcc8.h	38;"	d
+atomic8_set	base/atomic_gcc8.h	40;"	d
+atomic8_sub	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_sub(int64_t i, atomic8_t *v)$/;"	f
+atomic8_sub	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_sub(int64_t i, atomic8_t *v)$/;"	f
+atomic8_sub_and_test	base/atomic_asm8.h	/^static __inline__ int atomic8_sub_and_test(int i, atomic8_t *v)$/;"	f
+atomic8_sub_and_test	base/atomic_gcc8.h	/^static __inline__ int atomic8_sub_and_test(int64_t i, atomic8_t *v)$/;"	f
+atomic8_sub_return	base/atomic_asm8.h	/^static __inline__ int64_t atomic8_sub_return(int64_t i, atomic8_t *v)$/;"	f
+atomic8_sub_return	base/atomic_gcc8.h	/^static __inline__ int64_t atomic8_sub_return(int64_t i, atomic8_t *v)$/;"	f
+atomic8_t	base/atomic_asm8.h	/^} atomic8_t;$/;"	t	typeref:struct:__anon2
+atomic8_t	base/atomic_gcc8.h	/^typedef volatile int64_t atomic8_t;$/;"	t
+atomic_add	base/atomic_asm.h	/^static __inline__ int atomic_add(int i, atomic_t *v)$/;"	f
+atomic_add	base/atomic_gcc.h	/^static __inline__ int atomic_add(int i, atomic_t *v)$/;"	f
+atomic_add_negative	base/atomic_asm.h	/^static __inline__ int atomic_add_negative(int i, atomic_t *v)$/;"	f
+atomic_add_negative	base/atomic_gcc.h	/^static __inline__ int atomic_add_negative(int i, atomic_t *v)$/;"	f
+atomic_add_return	base/atomic_asm.h	/^static __inline__ int atomic_add_return(int i, atomic_t *v)$/;"	f
+atomic_add_return	base/atomic_gcc.h	/^static __inline__ int atomic_add_return(int i, atomic_t *v)$/;"	f
+atomic_clear	base/atomic_asm.h	/^static __inline__ int atomic_clear(atomic_t *v)$/;"	f
+atomic_clear	base/atomic_gcc.h	/^static __inline__ int atomic_clear(atomic_t *v)$/;"	f
+atomic_clear_mask	base/atomic_asm.h	209;"	d
+atomic_dec	base/atomic_asm.h	/^static __inline__ void atomic_dec(atomic_t *v)$/;"	f
+atomic_dec	base/atomic_gcc.h	/^static __inline__ int atomic_dec(atomic_t *v)$/;"	f
+atomic_dec_and_test	base/atomic_asm.h	/^static __inline__ int atomic_dec_and_test(atomic_t *v)$/;"	f
+atomic_dec_and_test	base/atomic_gcc.h	/^static __inline__ int atomic_dec_and_test(atomic_t *v)$/;"	f
+atomic_dec_return	base/atomic_asm.h	206;"	d
+atomic_dec_return	base/atomic_gcc.h	156;"	d
+atomic_inc	base/atomic_asm.h	/^static __inline__ void atomic_inc(atomic_t *v)$/;"	f
+atomic_inc	base/atomic_gcc.h	/^static __inline__ int atomic_inc(atomic_t *v)$/;"	f
+atomic_inc_and_test	base/atomic_asm.h	/^static __inline__ int atomic_inc_and_test(atomic_t *v)$/;"	f
+atomic_inc_and_test	base/atomic_gcc.h	/^static __inline__ int atomic_inc_and_test(atomic_t *v)$/;"	f
+atomic_inc_return	base/atomic_asm.h	205;"	d
+atomic_inc_return	base/atomic_gcc.h	155;"	d
+atomic_read	base/atomic_asm.h	26;"	d
+atomic_read	base/atomic_gcc.h	22;"	d
+atomic_set	base/atomic_asm.h	35;"	d
+atomic_set	base/atomic_gcc.h	31;"	d
+atomic_set_mask	base/atomic_asm.h	213;"	d
+atomic_sub	base/atomic_asm.h	/^static __inline__ int atomic_sub(int i, atomic_t *v)$/;"	f
+atomic_sub	base/atomic_gcc.h	/^static __inline__ int atomic_sub(int i, atomic_t *v)$/;"	f
+atomic_sub_and_test	base/atomic_asm.h	/^static __inline__ int atomic_sub_and_test(int i, atomic_t *v)$/;"	f
+atomic_sub_and_test	base/atomic_gcc.h	/^static __inline__ int atomic_sub_and_test(int i, atomic_t *v)$/;"	f
+atomic_sub_return	base/atomic_asm.h	/^static __inline__ int atomic_sub_return(int i, atomic_t *v)$/;"	f
+atomic_sub_return	base/atomic_gcc.h	/^static __inline__ int atomic_sub_return(int i, atomic_t *v)$/;"	f
+atomic_t	base/atomic_asm.h	/^} atomic_t;$/;"	t	typeref:struct:__anon1
+atomic_t	base/atomic_gcc.h	/^typedef volatile int atomic_t;$/;"	t
 atoport	comm/src/cm_net.c	/^int atoport(const char *sService, const char *sProto)$/;"	f
 base	base/commu.h	/^	namespace base {$/;"	n	namespace:common
 base	base/list.h	/^	namespace base {$/;"	n	namespace:common
 base	base/misc.h	/^	namespace base $/;"	n	namespace:common
 base	base/notify.h	/^	namespace base {$/;"	n	namespace:common
 base	base/procmon.h	/^	namespace base {$/;"	n	namespace:common
-basepath_	base/procmon.h	/^				char basepath_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
-blob_type	base/commu.h	/^			} blob_type;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon3
-bucket_	base/procmon.h	/^				list_head_t bucket_[BUCKET_SIZE];$/;"	m	struct:common::base::procmon::__anon9
+base	base/shmcommu.h	/^	namespace base {$/;"	n	namespace:common
+basepath_	base/procmon.h	/^				char basepath_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon7
+blob_type	base/commu.h	/^			} blob_type;$/;"	t	namespace:common::base::commu	typeref:struct:common::base::commu::__anon5
+bucket_	base/procmon.h	/^				list_head_t bucket_[BUCKET_SIZE];$/;"	m	struct:common::base::procmon::__anon11
 cb_func	base/commu.h	/^			typedef int (*cb_func)(unsigned flow, void *arg1, void *arg2);$/;"	t	namespace:common::base::commu
-cb_type	base/commu.h	/^			} cb_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon1
+cb_type	base/commu.h	/^			} cb_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon3
+check_group	base/procmon.cpp	/^void CProcMonSrv::check_group(GroupInfo * group, int curprocnum)$/;"	f	class:CProcMonSrv
+check_groupbusy	base/procmon.cpp	/^bool CProcMonSrv::check_groupbusy(int groupid)$/;"	f	class:CProcMonSrv
 check_process_exist	base/misc.cpp	/^int CMisc::check_process_exist(pid_t pid)$/;"	f	class:CMisc
-cmd_	base/procmon.h	/^				unsigned cmd_;$/;"	m	struct:common::base::procmon::__anon7
+cmd_	base/procmon.h	/^				unsigned cmd_;$/;"	m	struct:common::base::procmon::__anon9
 common	base/commu.h	/^namespace common{$/;"	n
 common	base/list.h	/^namespace common {$/;"	n
 common	base/misc.h	/^namespace common$/;"	n
 common	base/notify.h	/^namespace common {$/;"	n
 common	base/procmon.h	/^namespace common {$/;"	n
+common	base/shmcommu.h	/^namespace common{$/;"	n
 common	singleton.h	/^namespace common {$/;"	n
 commu	base/commu.h	/^		namespace commu {$/;"	n	namespace:common::base
+commu	base/shmcommu.h	/^		namespace commu {$/;"	n	namespace:common::base
 commu_	base/procmon.h	/^					CCommu * commu_;$/;"	m	class:common::base::procmon::CProcMonCli
 commu_	base/procmon.h	/^					CCommu * commu_;$/;"	m	class:common::base::procmon::CProcMonSrv
-ctrl_type	base/commu.h	/^			} ctrl_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon2
+counter	base/atomic_asm.h	/^    volatile int counter;$/;"	m	struct:__anon1
+counter	base/atomic_asm8.h	/^    volatile int64_t counter;$/;"	m	struct:__anon2
+ctrl_type	base/commu.h	/^			} ctrl_type;$/;"	t	namespace:common::base::commu	typeref:enum:common::base::commu::__anon4
 cur_group_	base/procmon.h	/^					int cur_group_;$/;"	m	class:common::base::procmon::CProcMonSrv
-curprocnum_	base/procmon.h	/^				int curprocnum_;$/;"	m	struct:common::base::procmon::__anon9
-data	base/commu.h	/^				char *data; \/\/ data buf$/;"	m	struct:common::base::commu::__anon3
+curflow	base/shmcommu.h	/^					atomic_t curflow;$/;"	m	struct:common::base::commu::shmcommu::qstatinfo
+curprocnum_	base/procmon.h	/^				int curprocnum_;$/;"	m	struct:common::base::procmon::__anon11
+data	base/commu.h	/^				char *data; \/\/ data buf$/;"	m	struct:common::base::commu::__anon5
+del_proc	base/procmon.cpp	/^void CProcMonSrv::del_proc(int groupid, int procid)$/;"	f	class:CProcMonSrv
+do_check	base/procmon.cpp	/^bool CProcMonSrv::do_check()$/;"	f	class:CProcMonSrv
 do_recv	base/procmon.cpp	/^bool CProcMonSrv::do_recv(long msgtype)$/;"	f	class:CProcMonSrv
-errprocnum_	base/procmon.h	/^				int errprocnum_;$/;"	m	struct:common::base::procmon::__anon9
-etcfile_	base/procmon.h	/^				char etcfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
-exefile_	base/procmon.h	/^				char exefile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
-exitsignal_	base/procmon.h	/^				int exitsignal_;$/;"	m	struct:common::base::procmon::__anon5
-extdata	base/commu.h	/^				void *extdata;$/;"	m	struct:common::base::commu::__anon3
-fd_	base/commu.h	/^				int fd_;$/;"	m	struct:common::base::commu::__anon4
+dump_pid_list	base/procmon.cpp	/^int CProcMonSrv::dump_pid_list(char *buf, int len)$/;"	f	class:CProcMonSrv
+errprocnum_	base/procmon.h	/^				int errprocnum_;$/;"	m	struct:common::base::procmon::__anon11
+etcfile_	base/procmon.h	/^				char etcfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon7
+exefile_	base/procmon.h	/^				char exefile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon7
+exitsignal_	base/procmon.h	/^				int exitsignal_;$/;"	m	struct:common::base::procmon::__anon7
+extdata	base/commu.h	/^				void *extdata;$/;"	m	struct:common::base::commu::__anon5
+fd_	base/commu.h	/^				int fd_;$/;"	m	struct:common::base::commu::__anon6
+find_group	base/procmon.cpp	/^ProcGroupObj * CProcMonSrv::find_group(int groupid)$/;"	f	class:CProcMonSrv
+find_proc	base/procmon.cpp	/^ProcObj * CProcMonSrv::find_proc(int groupid, int procid)$/;"	f	class:CProcMonSrv
 fini	base/procmon.cpp	/^void CMQCommu::fini()$/;"	f	class:CMQCommu
+flag	base/shmcommu.h	/^					atomic_t flag;$/;"	m	struct:common::base::commu::shmcommu::qstatinfo
 func_args_	base/commu.h	/^					void *func_args_[CB_TIMEOUT + 1];$/;"	m	class:common::base::commu::CTCommu
 func_list_	base/commu.h	/^					cb_func func_list_[CB_TIMEOUT + 1];$/;"	m	class:common::base::commu::CTCommu
 g_anf_shm_fifo	base/notify.cpp	/^int g_anf_shm_fifo = false;$/;"	v
 g_astPersons	comm/example/test_cm_shm.c	/^struct Person g_astPersons[PERSION_ARRAY_SIZE];$/;"	v	typeref:struct:Person
 get_fifo_path	base/notify.cpp	/^char *CNotify::get_fifo_path(int key)$/;"	f	class:CNotify
 getip	base/misc.cpp	/^unsigned CMisc::getip(const char *ifname) $/;"	f	class:CMisc
-group_type_	base/procmon.h	/^				unsigned group_type_;$/;"	m	struct:common::base::procmon::__anon5
-groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon5
-groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon6
+group_type_	base/procmon.h	/^				unsigned group_type_;$/;"	m	struct:common::base::procmon::__anon7
 groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon7
-groupinfo_	base/procmon.h	/^				GroupInfo groupinfo_;$/;"	m	struct:common::base::procmon::__anon9
-heartbeat_	base/procmon.h	/^				unsigned heartbeat_;$/;"	m	struct:common::base::procmon::__anon5
+groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon8
+groupid_	base/procmon.h	/^				int groupid_;$/;"	m	struct:common::base::procmon::__anon9
+groupinfo_	base/procmon.h	/^				GroupInfo groupinfo_;$/;"	m	struct:common::base::procmon::__anon11
+heartbeat_	base/procmon.h	/^				unsigned heartbeat_;$/;"	m	struct:common::base::procmon::__anon7
 hton64	comm/src/cm_binary.h	/^static inline uint64_t hton64(uint64_t qwVal)$/;"	f
 iAge	comm/example/test_cm_shm.c	/^	int iAge;$/;"	m	struct:Person	file:
-iMaxLogNum	comm/src/cm_log.h	/^	int iMaxLogNum;$/;"	m	struct:__anon11
+iMaxLogNum	comm/src/cm_log.h	/^	int iMaxLogNum;$/;"	m	struct:__anon13
 iSex	comm/example/test_cm_shm.c	/^	int iSex;$/;"	m	struct:Person	file:
-iShiftType	comm/src/cm_log.h	/^	int iShiftType;$/;"	m	struct:__anon11
+iShiftType	comm/src/cm_log.h	/^	int iShiftType;$/;"	m	struct:__anon13
 init	base/procmon.cpp	/^int CMQCommu::init(void *args)$/;"	f	class:CMQCommu
-lLastShiftTime	comm/src/cm_log.h	/^	CM_INT32 lLastShiftTime;$/;"	m	struct:__anon11
-lLogLineCount	comm/src/cm_log.h	/^	CM_INT32 lLogLineCount;$/;"	m	struct:__anon11
-lMaxCount	comm/src/cm_log.h	/^	CM_INT32 lMaxCount;$/;"	m	struct:__anon11
-lMaxFileSize	comm/src/cm_log.h	/^	CM_INT32 lMaxFileSize;$/;"	m	struct:__anon11
-lMaxLineCount	comm/src/cm_log.h	/^	CM_INT32 lMaxLineCount;$/;"	m	struct:__anon11
-len	base/commu.h	/^				int len;$/;"	m	struct:common::base::commu::__anon3
+kill_group	base/procmon.cpp	/^void CProcMonSrv::kill_group(int grp_id, int signo)$/;"	f	class:CProcMonSrv
+killall	base/procmon.cpp	/^void CProcMonSrv::killall(int signo)$/;"	f	class:CProcMonSrv
+lLastShiftTime	comm/src/cm_log.h	/^	CM_INT32 lLastShiftTime;$/;"	m	struct:__anon13
+lLogLineCount	comm/src/cm_log.h	/^	CM_INT32 lLogLineCount;$/;"	m	struct:__anon13
+lMaxCount	comm/src/cm_log.h	/^	CM_INT32 lMaxCount;$/;"	m	struct:__anon13
+lMaxFileSize	comm/src/cm_log.h	/^	CM_INT32 lMaxFileSize;$/;"	m	struct:__anon13
+lMaxLineCount	comm/src/cm_log.h	/^	CM_INT32 lMaxLineCount;$/;"	m	struct:__anon13
+len	base/commu.h	/^				int len;$/;"	m	struct:common::base::commu::__anon5
 likely	serverbase.h	13;"	d
-list_	base/procmon.h	/^				list_head_t list_;$/;"	m	struct:common::base::procmon::__anon10
+list_	base/procmon.h	/^				list_head_t list_;$/;"	m	struct:common::base::procmon::__anon12
 list_add	base/list.h	/^static inline void list_add(struct list_head *p, struct list_head *head)$/;"	f	namespace:common::base
 list_add_tail	base/list.h	/^static inline void list_add_tail(struct list_head *p, struct list_head *head)$/;"	f	namespace:common::base
 list_del	base/list.h	/^static inline void list_del(struct list_head *entry)$/;"	f	namespace:common::base
@@ -330,8 +435,8 @@ list_move	base/list.h	/^static inline void list_move(struct list_head *list, str
 list_move_tail	base/list.h	/^static inline void list_move_tail(struct list_head *list, struct list_head *head)$/;"	f	namespace:common::base
 list_splice	base/list.h	/^static inline void list_splice(struct list_head *list, struct list_head *head)$/;"	f	namespace:common::base
 list_splice_init	base/list.h	/^static inline void list_splice_init(struct list_head *list,$/;"	f	namespace:common::base
-localip_	base/commu.h	/^				unsigned localip_;$/;"	m	struct:common::base::commu::__anon4
-localport_	base/commu.h	/^				unsigned short localport_;$/;"	m	struct:common::base::commu::__anon4
+localip_	base/commu.h	/^				unsigned localip_;$/;"	m	struct:common::base::commu::__anon6
+localport_	base/commu.h	/^				unsigned short localport_;$/;"	m	struct:common::base::commu::__anon6
 logfile	base/procmon.h	/^					LogFile * logfile;$/;"	m	class:common::base::procmon::CMQCommu
 logfile	base/procmon.h	/^					LogFile * logfile;$/;"	m	class:common::base::procmon::CProcMonSrv
 main	base/procmon.cpp	/^int main() $/;"	f
@@ -343,17 +448,18 @@ main	comm/example/test_cm_net.c	/^int main()$/;"	f
 main	comm/example/test_cm_process.c	/^int main()$/;"	f
 main	comm/example/test_cm_shm.c	/^int main(int argc, char * argv[])$/;"	f
 main	test.cpp	/^int main() $/;"	f
-maxprocnum_	base/procmon.h	/^				unsigned maxprocnum_;$/;"	m	struct:common::base::procmon::__anon5
-minprocnum_	base/procmon.h	/^				unsigned minprocnum_;$/;"	m	struct:common::base::procmon::__anon5
+maxprocnum_	base/procmon.h	/^				unsigned maxprocnum_;$/;"	m	struct:common::base::procmon::__anon7
+minprocnum_	base/procmon.h	/^				unsigned minprocnum_;$/;"	m	struct:common::base::procmon::__anon7
 mod_group	base/procmon.cpp	/^int CProcMonSrv::mod_group(int groupid, const GroupInfo * groupinfo)$/;"	f	class:CProcMonSrv
 monsrc_cb	base/procmon.h	/^			typedef void (*monsrc_cb) (const GroupInfo * groupinfo,$/;"	t	namespace:common::base::procmon
-mpfile_	base/procmon.h	/^				char mpfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon5
+mpfile_	base/procmon.h	/^				char mpfile_[MAX_FILEPATH_LEN];$/;"	m	struct:common::base::procmon::__anon7
 mqid_	base/procmon.h	/^					int mqid_;$/;"	m	class:common::base::procmon::CMQCommu
-mqkey	base/procmon.h	/^				int mqkey;$/;"	m	struct:common::base::procmon::__anon5
+mqkey	base/procmon.h	/^				int mqkey;$/;"	m	struct:common::base::procmon::__anon7
 msg_	base/procmon.h	/^					ProcMonMsg msg_[2];$/;"	m	class:common::base::procmon::CProcMonSrv
-msgcontent_	base/procmon.h	/^				char msgcontent_[MAX_MSG_BUFF];$/;"	m	struct:common::base::procmon::__anon8
-msglen_	base/procmon.h	/^				long msglen_;$/;"	m	struct:common::base::procmon::__anon8
-msgtype_	base/procmon.h	/^				long msgtype_;$/;"	m	struct:common::base::procmon::__anon8
+msg_count	base/shmcommu.h	/^					atomic_t msg_count;$/;"	m	struct:common::base::commu::shmcommu::qstatinfo
+msgcontent_	base/procmon.h	/^				char msgcontent_[MAX_MSG_BUFF];$/;"	m	struct:common::base::procmon::__anon10
+msglen_	base/procmon.h	/^				long msglen_;$/;"	m	struct:common::base::procmon::__anon10
+msgtype_	base/procmon.h	/^				long msgtype_;$/;"	m	struct:common::base::procmon::__anon10
 next	base/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:common::base::list_head	typeref:struct:common::base::list_head::list_head
 notify	base/notify.h	/^		namespace notify {$/;"	n	namespace:common::base
 notify_init	base/notify.cpp	/^int CNotify::notify_init(int key, char *fifoname, size_t fifoname_size)$/;"	f	class:CNotify
@@ -363,49 +469,52 @@ ntoh64	comm/src/cm_binary.h	43;"	d
 objlist	base/list.h	/^		struct list_head objlist;$/;"	m	class:common::base::CListHead	typeref:struct:common::base::CListHead::list_head
 offsetof	base/list.h	133;"	d
 offsetof	base/list.h	135;"	d
-owner	base/commu.h	/^				void *owner;$/;"	m	struct:common::base::commu::__anon3
-pLogFile	comm/src/cm_log.h	/^	FILE *pLogFile;$/;"	m	struct:__anon11
+owner	base/commu.h	/^				void *owner;$/;"	m	struct:common::base::commu::__anon5
+pLogFile	comm/src/cm_log.h	/^	FILE *pLogFile;$/;"	m	struct:__anon13
 prev	base/list.h	/^	struct list_head *next, *prev;$/;"	m	struct:common::base::list_head	typeref:struct:common::base::list_head::
 proc_groups_	base/procmon.h	/^					ProcGroupObj proc_groups_[MAX_PROC_GROUP_NUM];$/;"	m	class:common::base::procmon::CProcMonSrv
+process_count	base/shmcommu.h	/^					atomic_t process_count;$/;"	m	struct:common::base::commu::shmcommu::qstatinfo
 process_exception	base/procmon.cpp	/^void CProcMonSrv::process_exception()$/;"	f	class:CProcMonSrv
-procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon6
-procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon7
-procinfo_	base/procmon.h	/^				ProcInfo procinfo_;$/;"	m	struct:common::base::procmon::__anon10
+procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon8
+procid_	base/procmon.h	/^				int procid_;$/;"	m	struct:common::base::procmon::__anon9
+procinfo_	base/procmon.h	/^				ProcInfo procinfo_;$/;"	m	struct:common::base::procmon::__anon12
 procmon	base/procmon.h	/^		namespace procmon {$/;"	n	namespace:common::base
-q_recv_pstat	base/procmon.h	/^				void * q_recv_pstat;$/;"	m	struct:common::base::procmon::__anon5
+q_recv_pstat	base/procmon.h	/^				void * q_recv_pstat;$/;"	m	struct:common::base::procmon::__anon7
+qstatinfo	base/shmcommu.h	/^				typedef struct qstatinfo {$/;"	s	namespace:common::base::commu::shmcommu
 realloc_safe	base/misc.h	/^				static inline void * realloc_safe(void *ptr, size_t size)$/;"	f	class:common::base::CMisc
 recv	base/procmon.cpp	/^int CMQCommu::recv(ProcMonMsg *msg, long msgtype) {$/;"	f	class:CMQCommu
-recvkey	base/procmon.h	/^				unsigned int recvkey;$/;"	m	struct:common::base::procmon::__anon5
-recvkeysize	base/procmon.h	/^				unsigned int recvkeysize;$/;"	m	struct:common::base::procmon::__anon5
-recvtime_	base/commu.h	/^				time_t recvtime_; \/\/recv sec$/;"	m	struct:common::base::commu::__anon4
+recvkey	base/procmon.h	/^				unsigned int recvkey;$/;"	m	struct:common::base::procmon::__anon7
+recvkeysize	base/procmon.h	/^				unsigned int recvkeysize;$/;"	m	struct:common::base::procmon::__anon7
+recvtime_	base/commu.h	/^				time_t recvtime_; \/\/recv sec$/;"	m	struct:common::base::commu::__anon6
 reg_cb	base/commu.h	/^					virtual int reg_cb(cb_type type, cb_func func, void *args = NULL) {$/;"	f	class:common::base::commu::CTCommu
-reload_	base/procmon.h	/^				unsigned reload_;$/;"	m	struct:common::base::procmon::__anon5
+reload_	base/procmon.h	/^				unsigned reload_;$/;"	m	struct:common::base::procmon::__anon7
 reload_tag	base/procmon.h	/^					std::map<int, std::map<int, int> > reload_tag;$/;"	m	class:common::base::procmon::CProcMonSrv
-reload_time	base/procmon.h	/^				time_t reload_time;$/;"	m	struct:common::base::procmon::__anon5
-remoteip_	base/commu.h	/^				unsigned remoteip_;$/;"	m	struct:common::base::commu::__anon4
-remoteport_	base/commu.h	/^				unsigned short remoteport_;$/;"	m	struct:common::base::commu::__anon4
-reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon5
-reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon6
+reload_time	base/procmon.h	/^				time_t reload_time;$/;"	m	struct:common::base::procmon::__anon7
+remoteip_	base/commu.h	/^				unsigned remoteip_;$/;"	m	struct:common::base::commu::__anon6
+remoteport_	base/commu.h	/^				unsigned short remoteport_;$/;"	m	struct:common::base::commu::__anon6
 reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon7
+reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon8
+reserve_	base/procmon.h	/^				char reserve_[8];$/;"	m	struct:common::base::procmon::__anon9
 run	base/procmon.cpp	/^void CProcMonSrv::run()$/;"	f	class:CProcMonSrv
-sBaseFileName	comm/src/cm_log.h	/^	char sBaseFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon11
-sLogFileName	comm/src/cm_log.h	/^	char sLogFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon11
+sBaseFileName	comm/src/cm_log.h	/^	char sBaseFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon13
+sLogFileName	comm/src/cm_log.h	/^	char sLogFileName[MAX_LOG_FILE_NAME_LEN];$/;"	m	struct:__anon13
 segv_wait	base/procmon.cpp	/^void CProcMonSrv::segv_wait(ProcInfo * procinfo)$/;"	f	class:CProcMonSrv
 send	base/procmon.cpp	/^int CMQCommu::send(ProcMonMsg *msg)$/;"	f	class:CMQCommu
-sendkey	base/procmon.h	/^				unsigned int sendkey;$/;"	m	struct:common::base::procmon::__anon5
-sendkeysize	base/procmon.h	/^				unsigned int sendkeysize;$/;"	m	struct:common::base::procmon::__anon5
+sendkey	base/procmon.h	/^				unsigned int sendkey;$/;"	m	struct:common::base::procmon::__anon7
+sendkeysize	base/procmon.h	/^				unsigned int sendkeysize;$/;"	m	struct:common::base::procmon::__anon7
 set_commu	base/procmon.cpp	/^void CProcMonSrv::set_commu(CCommu * commu)$/;"	f	class:CProcMonSrv
 set_log	base/procmon.cpp	/^void CProcMonSrv::set_log(LogFile * logfile)$/;"	f	class:CProcMonSrv
 setlog	base/procmon.cpp	/^void CMQCommu::setlog(LogFile * logfile)$/;"	f	class:CMQCommu
+shmcommu	base/shmcommu.h	/^			namespace shmcommu{$/;"	n	namespace:common::base::commu
 singleton	singleton.h	/^	namespace singleton {$/;"	n	namespace:common
-srctype_	base/procmon.h	/^				long srctype_;$/;"	m	struct:common::base::procmon::__anon8
-status_	base/procmon.h	/^				int status_;$/;"	m	struct:common::base::procmon::__anon10
+srctype_	base/procmon.h	/^				long srctype_;$/;"	m	struct:common::base::procmon::__anon10
+status_	base/procmon.h	/^				int status_;$/;"	m	struct:common::base::procmon::__anon12
 time_diff	base/misc.h	/^				static inline int64_t time_diff(const struct timeval &tv1, const struct timeval &tv2) $/;"	f	class:common::base::CMisc
-timestamp_	base/procmon.h	/^				time_t timestamp_;$/;"	m	struct:common::base::procmon::__anon6
+timestamp_	base/procmon.h	/^				time_t timestamp_;$/;"	m	struct:common::base::procmon::__anon10
 timestamp_	base/procmon.h	/^				time_t timestamp_;$/;"	m	struct:common::base::procmon::__anon8
-tv_usec	base/commu.h	/^				suseconds_t tv_usec; \/\/ recv usec$/;"	m	struct:common::base::commu::__anon4
-type	base/procmon.h	/^				unsigned int type;$/;"	m	struct:common::base::procmon::__anon5
-type_	base/commu.h	/^				int type_; \/\/ STREAM DGRAM ...$/;"	m	struct:common::base::commu::__anon4
+tv_usec	base/commu.h	/^				suseconds_t tv_usec; \/\/ recv usec$/;"	m	struct:common::base::commu::__anon6
+type	base/procmon.h	/^				unsigned int type;$/;"	m	struct:common::base::procmon::__anon7
+type_	base/commu.h	/^				int type_; \/\/ STREAM DGRAM ...$/;"	m	struct:common::base::commu::__anon6
 unlikely	serverbase.h	16;"	d
 ~CCommu	base/procmon.h	/^					virtual ~CCommu() {}$/;"	f	class:common::base::procmon::CCommu
 ~CListObject	base/list.h	/^		~CListObject() {$/;"	f	class:common::base::CListObject

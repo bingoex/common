@@ -498,8 +498,85 @@ ProcObj * CProcMonSrv::find_proc(int groupid, int procid)
 	return NULL;
 }
 
+void CProcMonSrv::del_proc(int groupid, int procid)
+{
+	if (groupid >= cur_group_)
+		return;
 
+	ProcGroupObj * group = &proc_groups_[groupid];
+	int bucket = procid % BUCKET_SIZE;
+	ProcObj * proc = NULL;
+	list_for_each_entry(proc, &group->bucket_[bucket], list_)
+	{
+		if (proc->procinfo_.procid_ == procid) {
+			list_del(&proc->list_);
+			delete proc;
+			break;
+		}
+	}
 
+	group->curprocnum_--;
+}
+
+void CProcMonSrv::check_group(GroupInfo * group, int curprocnum)
+{
+	int event = 0;
+	int procdiff = 0;
+	time_t now = time(NULL);
+
+	if (group->adjust_proc_time + ADJUST_PROC_CYCLE > now ) {
+		return;
+	}
+
+	if (unlikely((procdiff = (int)group->minprocnum_ - curprocnum) > 0)) {
+		LOG("group %d current proc %d, fork %d process", group->groupid_, curprocnum, procdiff);
+		event |= PROCMON_EVENT_PROCDOWN;
+	} 
+	else if (unlikely(procdiff = curprocnum - (int)group->maxprocnum_) > 0) {
+		LOG("group %d current proc %d, kill %d process", group->groupid_, curprocnum, procdiff);
+		event |= PROCMON_EVENT_PROCUP;
+	}
+	else {
+		if (!check_groupbusy(group->groupid_)) {
+			if (((int)group->minprocnum_ < curprocnum)) {
+				LOG("group %d is not bus, current proc %d, kill 1 process", group->groupid_, curprocnum);
+				event |= PROCMON_EVENT_PROCUP;
+				procdiff = 1;
+			}
+		} else {
+			if (((int)group->maxprocnum_ > curprocnum)) {
+				LOG("group %d is busy current proc %d, fork 1 process", group->groupid_, curprocnum);
+				event |= PROCMON_EVENT_PROCDOWN;
+				procdiff = 1;
+			}
+		}
+	}
+
+	if (unlikely(event != 0)) {
+		group->adjust_proc_time = now;
+		do_event(event, (void *)&procdiff, (void *)group);
+	}
+}
+
+bool CProcMonSrv::check_proc(GroupInfo * group, ProcInfo * proc)
+{
+	int event = 0;
+	time_t now = time(NULL);
+
+	if (unlikely(proc->timestamp_ < now - (time_t)group->heartbeat_)) {
+		LOG("group %d pid %d is dead, no heartbeat", group->groupid_, proc->procid_);
+		event |= PROCMON_EVENT_PROCDEAD;
+	}
+
+	((ProcObj *)proc)->status_ = PROCMON_STATUS_OK;
+
+	if (unlikely(event != 0)) {
+		group->adjust_proc_time = now;
+		return do_event(event, (void *)&proc->procid_, (void *)proc);
+	} else {
+		return false;
+	}
+}
 
 
 

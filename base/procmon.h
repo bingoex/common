@@ -204,7 +204,7 @@ namespace common {
 
 					virtual void check_group(GroupInfo *group, int curprocnumd);
 					virtual bool check_proc(GroupInfo *group, ProcInfo *proc);
-					virtual void do_event(int event, void *arg1, void *arg2);
+					virtual bool do_event(int event, void *arg1, void *arg2);
 					virtual void do_fork(const char *basepath, const char *exefile, const char * etcfile,
 										 int num, unsigned group_type, unsigned mask);
 
