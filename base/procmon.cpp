@@ -5,6 +5,8 @@
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <signal.h>
 
 #include "shmcommu.h"
 #include "procmon.h"
@@ -578,15 +580,167 @@ bool CProcMonSrv::check_proc(GroupInfo * group, ProcInfo * proc)
 	}
 }
 
-
-
-
-
-
-
-
-
-int main() 
+bool CProcMonSrv::do_event(int event, void *arg1, void *arg2)
 {
+	//group event
+	if (event & PROCMON_EVENT_PROCDOWN) {
+		int diff = *((int *)arg1);
+		GroupInfo * group = (GroupInfo *)arg2;
+
+		do_fork(group->basepath_, group->exefile_, group->etcfile_, diff, group->group_type_, group->affinity_);
+		return false;
+	}
+
+	if (event & PROCMON_EVENT_PROCUP) {
+		int diff = *((int *)arg1);
+		ProcGroupObj * group = (ProcGroupObj *)arg2;
+		int groupid = group->groupinfo_.groupid_;
+		ProcObj *proc = NULL;
+		int procid = 0;
+		int count = 0;
+
+		for (int i = 0; i < BUCKET_SIZE; i++) {
+			list_for_each_entry(proc, &group->bucket_[i], list_)
+			{
+				procid = proc->procinfo_.procid_;
+				do_kill(procid, SIGUSR1);
+				do_recv(procid);
+				del_proc(groupid, procid);
+
+				count++;
+				i++;
+				break;
+			}
+
+			if (count >= diff)
+				break;
+		}
+	}
+
+	//proc event
+	ProcInfo *proc = (ProcInfo *)arg2;
+	((ProcObj *)proc)->status_ = PROCMON_STATUS_OK;
+
+	if (event & PROCMON_EVENT_PROCDEAD) {
+		GroupInfo * group = &proc_groups_[proc->groupid_].groupinfo_;
+		int signalno = group->exitsignal_;
+
+		//TODO create a coredump file if the worker proccess is Exit
+		if ((0 == kill(proc->procid_, 0)) || (errno != ESRCH)) {
+			LOG("create a coredump file because the worker proccess is Exit");
+		}
+
+		do_kill(proc->procid_, signalno);
+		usleep(10000);// TODO
+		((ProcGroupObj *)group)->errprocnum_++;
+		if (kill(proc->procid_, 0) == -1 && errno == ESRCH) { //if the process be kill then fork
+			do_recv(proc->procid_); // del msg in mq
+			del_proc(proc->groupid_, proc->procid_);
+			do_fork(group->basepath_, group->exefile_, group->etcfile_, 1, group->group_type_, group->affinity_);
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	return false;
+}
+
+void CProcMonSrv::do_fork(const char *basepath, const char *exefile, const char * etcfile,
+		int num, unsigned group_type, unsigned mask) {
+	char cmd_buf[256] = {0};
+	snprintf(cmd_buf, sizeof(cmd_buf) - 1, "%s/%s %s/%s", basepath, exefile, basepath, etcfile);
+	
+	if (mask > 0)
+		set_affinity(mask);
+
+	for (int i = 0; i < num; i++) {
+		system(cmd_buf);
+		usleep(12000);
+	}
+}
+
+int CProcMonSrv::set_affinity(const uint64_t mask)
+{
+	/* TODO
+	unsigned long mask_use = (unsigned long)mask;
+
+	if (sche_setaffinity(getpid(), (uint32_t)sizeof(mask_use), (cpu_set_t *)&mask_use) < 0) {
+		return -1;
+	}
+	*/
+
 	return 0;
 }
+
+void CProcMonSrv::do_kill(int procid, int signo)
+{
+	kill(procid, signo);
+}
+
+void CProcMonSrv::do_order(int groupid, int procid, int eventno, int cmd, int arg1, int arg2)
+{
+	msg_[1].msgtype_ = procid;
+	ProcEvent * event = (ProcEvent *)msg_[1].msgcontent_;
+	event->groupid_ = groupid;
+	event->procid_ = procid;
+	event->cmd_ = cmd;
+	event->arg1_ = arg1;
+	event->arg2_ = arg2;
+	commu_->send(&msg_[1]);
+}
+
+
+	
+
+
+//client
+
+CProcMonCli::CProcMonCli():commu_(NULL)
+{
+	msg_[0].msgtype_ = getpid();
+	msg_[0].msglen_ = (long)(((ProcMonMsg *)0)->msgcontent_) + sizeof(ProcInfo) - sizeof(long);
+	msg_[0].srctype_ = (MSG_VERSION << 1) | MSG_SRC_CLIENT;
+}
+
+CProcMonCli::~CProcMonCli()
+{
+	if (commu_)
+		delete commu_;
+}
+
+void CProcMonCli::set_commu(CCommu * commu){
+	if (commu_)
+		delete commu_;
+	commu_ = commu;
+}
+
+void CProcMonCli::run()
+{
+	commu_->send(&msg_[0]);
+}
+
+void CProcMonCli::exception_report(int signo)
+{
+	//TODO
+	int ret;
+	if (commu_ == NULL)
+		return;
+
+	msg_[0].timestamp_ = time(NULL);
+	msg_[0].srctype_ = (signo << EXCEPTION_STARTBIT) | (MSG_VERSION << 1) | MSG_SRC_CLIENT;
+
+	ret = commu_->send(&msg_[0]);
+	if (ret < 0)
+		return;
+	return;
+}
+
+void CProcMonCli::set_log(LogFile *logfile) {
+	this->logfile = logfile;
+}
+
+
+
+
+

@@ -227,7 +227,9 @@ namespace common {
 					void exception_report(int signo);
 
 					void set_log(LogFile * logflie);
+					ProcMonMsg msg_[2];
 				protected:
+					LogFile * logfile;
 					CCommu * commu_;
 			};
 
