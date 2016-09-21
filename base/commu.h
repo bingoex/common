@@ -56,15 +56,15 @@ namespace common{
 				suseconds_t tv_usec; // recv usec
 			} TConnExtInfo;
 
-			class CTCommu 
+			class CCommu 
 			{
 				public:
-					CTCommu() {
+					CCommu() {
 						memset(func_list_, 0, sizeof(cb_func) * (CB_TIMEOUT + 1));
 						memset(func_args_, 0, sizeof(void *) * (CB_TIMEOUT + 1));
 					}
 
-					virtual ~CTCommu() {}
+					virtual ~CCommu() {}
 
 					/*
 					 * config the name of config or just a config struct 
