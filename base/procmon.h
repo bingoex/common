@@ -134,7 +134,6 @@ namespace common {
 					void setlog(LogFile * logfile);
 				protected:
 					int mqid_;
-					LogFile * logfile;
 			};
 
 			typedef struct {
@@ -181,7 +180,6 @@ namespace common {
 					int dump_pid_list(char *buf, int len);
 
 				protected:
-					LogFile * logfile;
 					CCommu * commu_;
 
 					ProcGroupObj proc_groups_[MAX_PROC_GROUP_NUM];
@@ -226,10 +224,8 @@ namespace common {
 					void run();
 					void exception_report(int signo);
 
-					void set_log(LogFile * logflie);
 					ProcMonMsg msg_[2];
 				protected:
-					LogFile * logfile;
 					CCommu * commu_;
 			};
 

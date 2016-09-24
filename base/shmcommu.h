@@ -89,7 +89,7 @@ namespace common{
 
 						volatile unsigned *head_;
 						volatile unsigned *tail_;
-						volatile pid_t * pid;
+						volatile pid_t *pid_;
 
 						char * block_;
 						unsigned blocksize_;
@@ -182,7 +182,7 @@ namespace common{
 					int shmkey_comsumer_;
 					int shmsize_comsumer_;
 
-					int locktype;
+					int locktype_;
 					int maxpkg_;
 					unsigned msg_timeout;
 					int groupid;

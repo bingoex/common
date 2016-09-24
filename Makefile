@@ -27,6 +27,7 @@ OBJ = $(COMM)/test.o \
 	  $(BASE)/misc.o \
 	  $(BASE)/notify.o \
 	  $(BASE)/procmon.o \
+	  $(BASE)/shmcommu.o \
 	  
 
 all : $(TARGET)

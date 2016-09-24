@@ -76,11 +76,6 @@ int CMQCommu::send(ProcMonMsg *msg)
 	return ret;
 }
 
-void CMQCommu::setlog(LogFile * logfile)
-{
-	this->logfile = logfile;
-}
-
 
 #define ADJUST_PROC_DELAY 15
 #define ADJUST_PROC_CYCLE 1200
@@ -171,10 +166,6 @@ void CProcMonSrv::set_commu(CCommu * commu)
 	do_recv(0);
 }
 
-void CProcMonSrv::set_log(LogFile * logfile)
-{
-	this->logfile = logfile;
-}
 
 void CProcMonSrv::run()
 {
@@ -736,9 +727,6 @@ void CProcMonCli::exception_report(int signo)
 	return;
 }
 
-void CProcMonCli::set_log(LogFile *logfile) {
-	this->logfile = logfile;
-}
 
 
 
