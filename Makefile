@@ -22,7 +22,6 @@ TARGET=libcommon.a
 OBJ = $(COMM)/test.o \
 	  $(COMM)/socket.o \
 	  $(COMM)/misc.o \
-	  $(COMM)/notify.o \
 	  $(COMM)/crc32.o \
 	  $(COMM)/keygen.o \
 
