@@ -1,7 +1,5 @@
 
 COMM = ../common
-BASE = ../common/base
-C_COMM = ../common/comm/src
 
 CUR_DIR=$(shell pwd)
 
@@ -16,19 +14,17 @@ endif
 CFLAGS += -g3 -ggdb -Wall -Wno-write-strings # -o2 -fno-inline -Werror
 CFLAGS += -pipe -fno-ident -FPIC -shared # -z defs
 
-INC += -I./ -I$(COMM) -I$(BASE)
-
-C_COMM_LIB = $(C_COMM)/cm_lib.a -I$(C_COMM) 
+INC += -I./ -I$(COMM) 
 
 LIB += -lpthread -ldl
 
 TARGET=libcommon.a
 OBJ = $(COMM)/test.o \
-	  $(BASE)/misc.o \
-	  $(BASE)/notify.o \
-	  $(BASE)/procmon.o \
-	  $(BASE)/shmcommu.o \
-	  
+	  $(COMM)/socket.o \
+	  $(COMM)/misc.o \
+	  $(COMM)/notify.o \
+	  $(COMM)/crc32.o \
+	  $(COMM)/keygen.o \
 
 all : $(TARGET)
 
@@ -37,10 +33,10 @@ $(TARGET) : $(OBJ)
 	chmod +x $@
 
 %.o : %.cpp
-	$(CXX) $(CFLAGS) -c -o $@ $< $(INC) $(C_COMM_LIB)
+	$(CXX) $(CFLAGS) -c -o $@ $< $(INC) 
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c -o $@ $< $(INC) $(C_COMM_LIB)
+	$(CC) $(CFLAGS) -c -o $@ $< $(INC)
 
 clean : 
 	rm -f $(OBJ) $(TARGET)

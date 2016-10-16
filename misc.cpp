@@ -11,7 +11,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-#include <netinet/in.h>       /* for sockaddr_in */  
+#include <netinet/in.h> 
 using namespace common::base;
 
 unsigned CMisc::getip(const char *ifname) 

@@ -7,6 +7,7 @@ namespace common {
 	namespace base {
 
 
+
 __BEGIN_DECLS
 
 #define __builtin_prefetch(x, y, z) (void)1
@@ -289,6 +290,7 @@ class CListObject: public CListHead
 			return ListPrev()->ListOwner();
 		}
 };
+
 
 
 	}

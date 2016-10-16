@@ -3,14 +3,18 @@
 
 namespace common {
 	namespace singleton {
+
+
 		template<class T> class CreateNew
 		{
 			public:
-				static T* Instance(T *proto) {
+				static T* Instance(T *proto) 
+				{
 					return new T;
 				}
 
-				static void Destroy(T *obj) {
+				static void Destroy(T *obj) 
+				{
 					delete obj;
 				}
 		};
@@ -18,11 +22,13 @@ namespace common {
 		template<class T> class CreateByProto
 		{
 			public:
-				static T* Instance(T *proto) {
+				static T* Instance(T *proto) 
+				{
 					return proto;
 				}
 
-				static void Destroy(T *obj) {
+				static void Destroy(T *obj) 
+				{
 				}
 		};
 
@@ -59,8 +65,11 @@ namespace common {
 
 		template <class T, template <class> class CreatePolicy>
 			T* SingleTon <T, CreatePolicy >::ProtoInstance_ = NULL;
-	}
 
+
+
+
+	}
 }
 
 #endif
