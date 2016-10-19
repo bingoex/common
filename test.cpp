@@ -2,7 +2,6 @@
 #include "list.h"
 #include "singleton.h"
 
-using namespace common::base::commu;
 
 int main() 
 {
